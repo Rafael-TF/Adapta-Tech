@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("adaptatechwebapibackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad3e0e6275b5e8b9055cd87c84a2edced65fdbf8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("adaptatechwebapibackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("adaptatechwebapibackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
