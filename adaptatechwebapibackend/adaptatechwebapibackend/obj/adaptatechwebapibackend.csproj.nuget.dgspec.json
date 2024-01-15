@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj": {}
+    "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj": {}
   },
   "projects": {
-    "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj": {
+    "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
+        "projectUniqueName": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
         "projectName": "adaptatechwebapibackend",
-        "projectPath": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
+        "projectPath": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
         "packagesPath": "/Users/rafaeltravadofernandez/.nuget/packages/",
-        "outputPath": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/obj/",
+        "outputPath": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rafaeltravadofernandez/.nuget/NuGet/NuGet.Config"
