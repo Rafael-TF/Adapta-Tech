@@ -15,6 +15,10 @@ public partial class Usuario
 
     public byte[] Salt { get; set; } = null!;
 
+    public string? EnlaceCambioPass { get; set; }
+
+    public DateTime? FechaEnvioEnlace { get; set; }
+
     public virtual ICollection<MensajesForo> MensajesForos { get; set; } = new List<MensajesForo>();
 
     public virtual ICollection<PerfilUsuario> PerfilUsuarios { get; set; } = new List<PerfilUsuario>();

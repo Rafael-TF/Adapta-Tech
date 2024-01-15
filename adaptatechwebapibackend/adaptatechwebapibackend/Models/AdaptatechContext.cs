@@ -71,6 +71,8 @@ public partial class AdaptatechContext : DbContext
             entity.HasKey(e => e.IdUsuario).HasName("PK__Usuarios__5B65BF97C3198A5F");
 
             entity.Property(e => e.Email).HasMaxLength(50);
+            entity.Property(e => e.EnlaceCambioPass).HasMaxLength(50);
+            entity.Property(e => e.FechaEnvioEnlace).HasColumnType("datetime");
             entity.Property(e => e.Password).HasMaxLength(50);
             entity.Property(e => e.Rol).HasMaxLength(50);
         });
