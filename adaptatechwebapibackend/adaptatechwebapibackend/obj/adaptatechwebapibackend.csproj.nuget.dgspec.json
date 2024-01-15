@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj": {}
+    "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptaTechwebapibackend/adaptatechwebapibackend.csproj": {}
   },
   "projects": {
-    "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj": {
+    "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptaTechwebapibackend/adaptatechwebapibackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
+        "projectUniqueName": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptaTechwebapibackend/adaptatechwebapibackend.csproj",
         "projectName": "adaptatechwebapibackend",
-        "projectPath": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
+        "projectPath": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptaTechwebapibackend/adaptatechwebapibackend.csproj",
         "packagesPath": "/Users/rafaeltravadofernandez/.nuget/packages/",
-        "outputPath": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/obj/",
+        "outputPath": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptaTechwebapibackend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rafaeltravadofernandez/.nuget/NuGet/NuGet.Config"
@@ -39,9 +39,23 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

@@ -1,0 +1,30 @@
+﻿EN WINDOWS
+
+Scaffold-DbContext "Data Source=(localdb)\mssqllocaldb;Initial Catalog=MiAlmacen;Integrated Security=True" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force -project WebAPIAlmacen
+
+Personalización
+
+Data Source= Ponemos nuestro servidor
+Initial Catalog= Base de datos
+-Provider hace referencia al motor de base de datos a emplear, en nuestro caso SQl Server. Para otras bases de datos, buscar documentación
+-OutputDir = Si queremos cambiar el nombre a la carpeta donde van a ir los modelos, cambiamos models por otro nombre 
+-force sobrescribe los modelos anteriores
+WebAPIAlmacen será el proyecto donde integrará los modelos
+
+EN MAC
+
+- Instalar en Nugget:
+
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+- Instalación terminal
+
+dotnet ef dbcontext Scaffold "Server=localhost;Initial Catalog=adaptatech;Persist Security Info=False;User ID=SA;Password=r48950015n;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --force --project adaptaTechwebapibackend
+
+- Server=localhost se pone siempre localhost
+- Catalog=MiAlmacen se pone la base de datos que queremos usar, en este caso MiAlmacen
+- User ID=SA es el user name que pongo en la conexión en azure, en este caso he puesto SA
+- --project WebApiAlmacen se pone el proyecto visual studio, en este caso es WebApiAlmacen
+
