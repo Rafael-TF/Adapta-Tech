@@ -1,0 +1,7 @@
+﻿@adaptatechwebapibackend_HostAddress = http://localhost:5049
+
+GET {{adaptatechwebapibackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
