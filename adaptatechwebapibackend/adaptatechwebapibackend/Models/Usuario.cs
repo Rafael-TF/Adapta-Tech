@@ -19,7 +19,9 @@ public partial class Usuario
 
     public DateTime? FechaEnvioEnlace { get; set; }
 
-    public virtual ICollection<MensajesForo> MensajesForos { get; set; } = new List<MensajesForo>();
+    public virtual ICollection<MensajeForo> MensajeForos { get; set; } = new List<MensajeForo>();
 
     public virtual ICollection<PerfilUsuario> PerfilUsuarios { get; set; } = new List<PerfilUsuario>();
+
+    public virtual ICollection<TemasForo> TemasForos { get; set; } = new List<TemasForo>();
 }

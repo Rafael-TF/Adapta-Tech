@@ -15,11 +15,13 @@ public partial class PerfilUsuario
 
     public string? Telefono { get; set; }
 
-    public DateOnly FechaNacimiento { get; set; }
+    public DateTime FechaNacimiento { get; set; }
 
     public byte[]? Avatar { get; set; }
 
     public string? Alias { get; set; }
+
+    public virtual ICollection<MensajeForo> MensajeForos { get; set; } = new List<MensajeForo>();
 
     public virtual Usuario? Usuario { get; set; }
 }

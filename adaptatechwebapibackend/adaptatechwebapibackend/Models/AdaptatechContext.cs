@@ -15,9 +15,11 @@ public partial class AdaptatechContext : DbContext
     {
     }
 
-    public virtual DbSet<MensajesForo> MensajesForos { get; set; }
+    public virtual DbSet<MensajeForo> MensajeForos { get; set; }
 
     public virtual DbSet<PerfilUsuario> PerfilUsuarios { get; set; }
+
+    public virtual DbSet<TemasForo> TemasForos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
@@ -27,17 +29,25 @@ public partial class AdaptatechContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<MensajesForo>(entity =>
+        modelBuilder.Entity<MensajeForo>(entity =>
         {
-            entity.HasKey(e => e.IdMensaje).HasName("PK__Mensajes__E4D2A47F67F6C5D5");
+            entity.HasKey(e => e.IdMensaje).HasName("PK__MensajeF__E4D2A47FAF77820F");
 
-            entity.ToTable("MensajesForo");
+            entity.ToTable("MensajeForo");
 
             entity.Property(e => e.FechaMensaje).HasColumnType("datetime");
 
-            entity.HasOne(d => d.Usuario).WithMany(p => p.MensajesForos)
-                .HasForeignKey(d => d.UsuarioId)
-                .HasConstraintName("FK__MensajesF__Usuar__3D5E1FD2");
+            entity.HasOne(d => d.IdPerfilUsuariomensajeNavigation).WithMany(p => p.MensajeForos)
+                .HasForeignKey(d => d.IdPerfilUsuariomensaje)
+                .HasConstraintName("FK__MensajeFo__IdPer__4D94879B");
+
+            entity.HasOne(d => d.IdTemaNavigation).WithMany(p => p.MensajeForos)
+                .HasForeignKey(d => d.IdTema)
+                .HasConstraintName("FK__MensajeFo__IdTem__4E88ABD4");
+
+            entity.HasOne(d => d.IdUsuariomensajeNavigation).WithMany(p => p.MensajeForos)
+                .HasForeignKey(d => d.IdUsuariomensaje)
+                .HasConstraintName("FK__MensajeFo__IdUsu__4CA06362");
         });
 
         modelBuilder.Entity<PerfilUsuario>(entity =>
@@ -54,6 +64,7 @@ public partial class AdaptatechContext : DbContext
             entity.Property(e => e.Apellidos)
                 .HasMaxLength(70)
                 .IsUnicode(false);
+            entity.Property(e => e.FechaNacimiento).HasColumnType("datetime");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -64,6 +75,20 @@ public partial class AdaptatechContext : DbContext
             entity.HasOne(d => d.Usuario).WithMany(p => p.PerfilUsuarios)
                 .HasForeignKey(d => d.UsuarioId)
                 .HasConstraintName("FK__PerfilUsu__Usuar__3A81B327");
+        });
+
+        modelBuilder.Entity<TemasForo>(entity =>
+        {
+            entity.HasKey(e => e.IdTema).HasName("PK__TemasFor__9F3A411726AA3AA5");
+
+            entity.ToTable("TemasForo");
+
+            entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.Titulo).HasMaxLength(60);
+
+            entity.HasOne(d => d.IdTemaUsuarioNavigation).WithMany(p => p.TemasForos)
+                .HasForeignKey(d => d.IdTemaUsuario)
+                .HasConstraintName("FK__TemasForo__IdTem__49C3F6B7");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
