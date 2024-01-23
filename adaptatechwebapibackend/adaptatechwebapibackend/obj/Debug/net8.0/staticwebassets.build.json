@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "shkyOTPtRJSwMTn4QLo7kZQuUm9VaWWduPUxXa2mbo4=",
+  "Hash": "jqEmKQ1hpNEe8uGiHikRh9uUyV2pTQvRa6CWt8yrEdI=",
   "Source": "adaptatechwebapibackend",
   "BasePath": "_content/adaptatechwebapibackend",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "adaptatechwebapibackend/wwwroot",
+      "Source": "adaptatechwebapibackend",
+      "ContentRoot": "/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/",
+      "BasePath": "_content/adaptatechwebapibackend",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [
     {
       "Identity": "/Users/rafaeltravadofernandez/.nuget/packages/microsoft.aspnetcore.components.quickgrid/8.0.1/staticwebassets/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",

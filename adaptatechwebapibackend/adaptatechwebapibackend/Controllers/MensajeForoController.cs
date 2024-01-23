@@ -38,11 +38,28 @@ namespace adaptatechwebapibackend.Controllers
         }
 
         // Obtener mensajes por alias
-        [HttpGet("{alias}")]
+        //[HttpGet("{alias}")]
+        //public async Task<ActionResult<MensajeForo>> GetMensajeForoAias(string alias)
+        //{
+        //    // Obtiene un mensaje específico por su alias
+        //    var mensajeForo = await _context.MensajeForos.FindAsync(alias);
+
+        //    if (mensajeForo == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return mensajeForo;
+        //}
+
+        // Obtener mensajes por alias
+        [HttpGet("alias/{alias}")]
         public async Task<ActionResult<MensajeForo>> GetMensajeForoAias(string alias)
         {
             // Obtiene un mensaje específico por su alias
-            var mensajeForo = await _context.MensajeForos.FindAsync(alias);
+            var mensajeForo = await _context.MensajeForos.Include(x => x.IdPerfilUsuariomensajeNavigation)
+                .Where(y => y.IdPerfilUsuariomensajeNavigation.Alias.Equals(alias)).FirstOrDefaultAsync();
+
 
             if (mensajeForo == null)
             {
@@ -94,7 +111,7 @@ namespace adaptatechwebapibackend.Controllers
                 {
                     IdUsuariomensaje = mensaje.IdUsuariomensaje,
                     IdPerfilUsuariomensaje = mensaje.IdPerfilUsuariomensaje,
-                    //IdTema = mensaje.IdTema,
+                    IdTema = mensaje.IdTema,
                     Texto = mensaje.Texto,
                     FechaMensaje = DateTime.Now
                 };

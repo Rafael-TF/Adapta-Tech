@@ -14,12 +14,49 @@ namespace adaptatechwebapibackend.Controllers
         private readonly AdaptatechContext _context;
         private readonly HashService _hashService;
         private readonly TokenService _tokenService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AuthController(AdaptatechContext context, HashService hashService, TokenService tokenService)
+        public AuthController(AdaptatechContext context, HashService hashService, TokenService tokenService, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
             _hashService = hashService;
             _tokenService = tokenService;
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+        {
+            // Obtiene todos los mensajes del foro
+            return await _context.Usuarios.ToListAsync();
+        }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<Usuario>> GetUsuariosId(int id)
+        {
+            // Obtiene todos los mensajes del foro
+            var usuario = await _context.Usuarios.FindAsync(id);
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            return usuario;
+        }
+
+        [HttpGet("{email}")]
+        public async Task<ActionResult<Usuario>> GetUsuariosEmail(string email)
+        {
+            // Obtiene todos los mensajes del foro
+            var usuario = await _context.Usuarios.Where(x => x.Email == email).FirstOrDefaultAsync();
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            return usuario;
         }
 
         [HttpPost("register")]
@@ -69,6 +106,66 @@ namespace adaptatechwebapibackend.Controllers
                 return Unauthorized(); // Si las contraseñas no coinciden, devuelve un error Unauthorized.
             }
 
+        }
+
+        [HttpPost("hash/linkchangepassword")]
+        public async Task<ActionResult> LinkChangePasswordHash([FromBody] DTOUsuarioLinkChangePassword usuario)
+        {
+            var usuarioDB = await _context.Usuarios.AsTracking().FirstOrDefaultAsync(x => x.Email == usuario.Email);
+            if (usuarioDB == null)
+            {
+                return Unauthorized("Usuario no registrado");
+            }
+
+            // Creamos un string aleatorio 
+            Guid miGuid = Guid.NewGuid();
+            string textoEnlace = Convert.ToBase64String(miGuid.ToByteArray());
+            // Eliminar caracteres que pueden causar problemas
+            textoEnlace = textoEnlace.Replace("=", "").Replace("+", "").Replace("/", "").Replace("?", "").Replace("&", "").Replace("!", "").Replace("¡", "");
+            usuarioDB.EnlaceCambioPass = textoEnlace;
+            usuarioDB.FechaEnvioEnlace = DateTime.UtcNow;
+
+            await _context.SaveChangesAsync();
+            var ruta = $"{_httpContextAccessor.HttpContext.Request.Scheme}://{_httpContextAccessor.HttpContext.Request.Host}/changepassword/{textoEnlace}";
+            return Ok(ruta);
+        }
+
+        [HttpGet("/changepassword/{textoEnlace}")]
+        public async Task<ActionResult> LinkChangePasswordHash(string textoEnlace)
+        {
+            var usuarioDB = await _context.Usuarios.FirstOrDefaultAsync(x => x.EnlaceCambioPass == textoEnlace);
+            if (usuarioDB == null)
+            {
+                return Unauthorized("Operación no autorizada.");
+            }
+
+            return Ok("Enlace correcto");
+        }
+
+        [HttpPost("usuarios/changepassword")]
+        public async Task<ActionResult> LinkChangePasswordHash([FromBody] DTOUsuarioChangePassword infoUsuario)
+        {
+            var usuarioDB = await _context.Usuarios.AsTracking().FirstOrDefaultAsync(x => x.Email == infoUsuario.Email && x.EnlaceCambioPass == infoUsuario.Enlace);
+            if (usuarioDB == null)
+            {
+                return Unauthorized("Operación no autorizada");
+            }
+            var duracionEnlaceMinutos = 30; // Duración del enlace en horas
+            // FechaEnvioEnlace ahora representa la caducidad del enlace
+            usuarioDB.FechaEnvioEnlace = DateTime.UtcNow.AddMinutes(duracionEnlaceMinutos);
+
+            if (usuarioDB.FechaEnvioEnlace < DateTime.UtcNow)
+            {
+                return Unauthorized("Enlace de cambio de contraseña caducado"); // Si el enlace ha caducado, devuelve un error Unauthorized.
+            }
+
+            var resultadoHash = _hashService.Hash(infoUsuario.Password);
+            usuarioDB.Password = resultadoHash.Hash;
+            usuarioDB.Salt = resultadoHash.Salt;
+
+            await _context.SaveChangesAsync();
+
+            return Ok("Password cambiado con exito");
         }
     }
 }

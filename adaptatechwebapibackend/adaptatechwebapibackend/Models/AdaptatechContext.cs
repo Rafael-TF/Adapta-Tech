@@ -17,6 +17,8 @@ public partial class AdaptatechContext : DbContext
 
     public virtual DbSet<MensajeForo> MensajeForos { get; set; }
 
+    public virtual DbSet<Operacione> Operaciones { get; set; }
+
     public virtual DbSet<PerfilUsuario> PerfilUsuarios { get; set; }
 
     public virtual DbSet<TemasForo> TemasForos { get; set; }
@@ -48,6 +50,16 @@ public partial class AdaptatechContext : DbContext
             entity.HasOne(d => d.IdUsuariomensajeNavigation).WithMany(p => p.MensajeForos)
                 .HasForeignKey(d => d.IdUsuariomensaje)
                 .HasConstraintName("FK__MensajeFo__IdUsu__4CA06362");
+        });
+
+        modelBuilder.Entity<Operacione>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Operacio__3214EC073780C877");
+
+            entity.Property(e => e.Controller).HasMaxLength(50);
+            entity.Property(e => e.FechaAccion).HasColumnType("datetime");
+            entity.Property(e => e.Ip).HasMaxLength(50);
+            entity.Property(e => e.Operacion).HasMaxLength(50);
         });
 
         modelBuilder.Entity<PerfilUsuario>(entity =>

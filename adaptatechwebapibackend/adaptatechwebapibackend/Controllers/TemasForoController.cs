@@ -152,29 +152,134 @@ namespace adaptatechwebapibackend.Controllers
          * */
 
 
+        //[HttpGet("temasmensajes/{id}")]
+        //public async Task<ActionResult<List<DTOTemasMensajes>>> GetTemasForoMensajesSelect()
+        //    {
+
+        //    var temas = await (from x in _context.TemasForos.Include(y => y.MensajeForos)
+        //                       select new DTOTemasMensajes
+        //                           {
+        //                           IdTemaDTO = x.IdTema,
+        //                           TituloDTO = x.Titulo!,
+        //                           MensajesDTO = x.MensajeForos.Select(y => new DTOMensajesItem
+        //                               {
+
+        //                               }).ToList(),
+
+        //                           }).ToListAsync();
+
+        //    if (temas.Count() == 0)
+        //        {
+        //        return NotFound("No hay datos de temas de foros");
+        //        }
+
+        //    return Ok(temas);
+        //    }
+
+        /**
+  
+Método GetTemaForoMensajesSelectId(int id)
+Devuelve un tema del foro con sus correspondientes mensajes.
+*/
+
+        //[HttpGet("temamensajes/{id:int}")]
+        //public async Task<ActionResult<DTOTemasMensajes>> GetTemaForoMensajesSelectId(int id)
+        //{
+
+        //    var tema = await (from x in _context.TemasForos.Include(y => y.MensajeForos)
+        //                      select new DTOTemasMensajes
+        //                      {
+        //                          IdTemaDTO = x.IdTema,
+        //                          TituloDTO = x.Titulo!,
+        //                          MensajesDTO = x.MensajeForos.Select(y => new DTOMensajesItem
+        //                          {
+        //                              IdUsuariomensajeDTO = y.IdUsuariomensaje,
+        //                              IdPerfilUsuariomensajeDTO = y.IdPerfilUsuariomensaje,
+        //                              IdTemaDTO = y.IdTema,
+        //                              TextoDTO = y.Texto!,
+        //                              FechaMensajeDTO = y.FechaMensaje
+
+        //                          }).ToList(),
+
+        //                      }).FirstOrDefaultAsync(z => z.IdTemaDTO == id);
+
+        //    if (tema == null)
+        //    {
+        //        return NotFound("No hay tema con ese Id");
+        //    }
+
+        //    return Ok(tema);
+        //}
+
         [HttpGet("temasmensajes/{id}")]
-        public async Task<ActionResult<List<DTOTemasMensajes>>> GetTemasForoMensajesSelect()
+        public async Task<ActionResult<List<DTOTemasMensajes>>> GetTemasForoMensajesSelect(int id)
+        {
+            try
             {
+                var temas = await _context.TemasForos
+                    .Include(t => t.MensajeForos)
+                    .Where(t => t.IdTema == id)
+                    .Select(x => new DTOTemasMensajes
+                    {
+                        IdTemaDTO = x.IdTema,
+                        TituloDTO = x.Titulo!,
+                        MensajesDTO = x.MensajeForos.Select(y => new DTOMensajesItem
+                        {
+                            //IdMensajeDTO = y.IdMensaje,
+                            IdUsuariomensajeDTO = y.IdUsuariomensaje,
+                            IdPerfilUsuariomensajeDTO = y.IdPerfilUsuariomensaje,
+                            IdTemaDTO = y.IdTema,
+                            TextoDTO = y.Texto!,
+                            FechaMensajeDTO = y.FechaMensaje
+                        }).ToList()
+                    })
+                    .ToListAsync();
+
+                if (temas.Count == 0)
+                {
+                    return NotFound("No hay datos de temas de foros");
+                }
+
+                return Ok(temas);
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, registra el error para debugging
+                Console.WriteLine($"Error al obtener temas y mensajes: {ex.Message}");
+                return StatusCode(500, "Error al obtener temas y mensajes");
+            }
+        }
+
+
+
+        [HttpGet("temasmensajes")]
+        public async Task<ActionResult<List<DTOTemasMensajes>>> GetTemasForoMensajesSelect()
+        {
 
             var temas = await (from x in _context.TemasForos.Include(y => y.MensajeForos)
                                select new DTOTemasMensajes
-                                   {
+                               {
                                    IdTemaDTO = x.IdTema,
                                    TituloDTO = x.Titulo!,
                                    MensajesDTO = x.MensajeForos.Select(y => new DTOMensajesItem
-                                       {
+                                   {
+                                       IdUsuariomensajeDTO = y.IdUsuariomensaje,
+                                       IdPerfilUsuariomensajeDTO = y.IdPerfilUsuariomensaje,
+                                       IdTemaDTO = y.IdTema,
+                                       TextoDTO = y.Texto!,
+                                       FechaMensajeDTO = y.FechaMensaje
 
-                                       }).ToList(),
+                                   }).ToList(),
 
-                                   }).ToListAsync();
+                               }).ToListAsync();
 
             if (temas.Count() == 0)
-                {
+            {
                 return NotFound("No hay datos de temas de foros");
-                }
+            }
 
             return Ok(temas);
-            }
+        }
 
 
 
@@ -204,7 +309,7 @@ namespace adaptatechwebapibackend.Controllers
             await _context.AddAsync(newTema);
             await _context.SaveChangesAsync();
 
-            return Created("PerfilUsuario", new { tema = newTema });
+            return Created("TemaForo", new { tema = newTema });
             }
 
         /**
@@ -215,7 +320,7 @@ namespace adaptatechwebapibackend.Controllers
          * 
          * */
 
-        [HttpPut("modificarPerfil/{id}")]
+        [HttpPut("modificarTema/{id}")]
         public async Task<ActionResult> PutPerfilUsuario([FromRoute] int id, DTOTemasForoPut tema)
             {
             if (id != tema.IdTemaDTO)

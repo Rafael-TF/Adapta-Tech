@@ -31,9 +31,12 @@ builder.Services.AddDbContext<AdaptatechContext>(options =>
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 }
 );
-
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddTransient<OperacionesService>();
 builder.Services.AddTransient<HashService>();
 builder.Services.AddTransient<TokenService>();
+builder.Services.AddHostedService<RegistroOperacionesService>();
+
 var clave = builder.Configuration["ClaveJWT"];
 // ----------------- TOKEN --------------------
 // Configuramos la seguridad en el proyecto. Manifestamos que se va a implementar la seguridad
