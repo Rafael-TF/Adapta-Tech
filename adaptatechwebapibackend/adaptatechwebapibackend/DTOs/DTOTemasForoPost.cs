@@ -3,11 +3,11 @@
     public class DTOTemasForoPost
         {
 
-        public string TituloDTO { get; set; }
+        public string Titulo { get; set; }
 
-        public int IdTemaUsuarioDTO { get; set; }
+        public int IdTemaUsuario { get; set; }
 
-        public DateTime FechaCreacionDTO { get; set; }
+        public DateTime FechaCreacion { get; set; }
 
         }
     }

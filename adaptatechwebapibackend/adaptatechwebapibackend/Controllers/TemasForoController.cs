@@ -195,9 +195,9 @@ namespace adaptatechwebapibackend.Controllers
             var newTema = new TemasForo()
                 {
 
-                Titulo = tema.TituloDTO,
-                IdTemaUsuario = tema.IdTemaUsuarioDTO,
-                FechaCreacion = tema.FechaCreacionDTO,
+                IdTemaUsuario = tema.IdTemaUsuario,
+                Titulo = tema.Titulo,
+                FechaCreacion = tema.FechaCreacion,
 
 
                 };
