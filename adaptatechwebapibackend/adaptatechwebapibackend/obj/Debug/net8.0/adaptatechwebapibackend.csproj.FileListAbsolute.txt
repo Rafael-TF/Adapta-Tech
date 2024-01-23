@@ -256,3 +256,10 @@
 /Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.AspNetCore.Components.QuickGrid.dll
 /Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
 /Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.AspNetCore.Authorization.dll
+/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.AspNetCore.Components.dll
+/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.AspNetCore.Components.Forms.dll
+/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.AspNetCore.Components.Web.dll
+/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.AspNetCore.Metadata.dll
+/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/rafaeltravadofernandez/Desktop/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/bin/Debug/net8.0/Microsoft.JSInterop.dll

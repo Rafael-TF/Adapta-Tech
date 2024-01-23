@@ -17,7 +17,7 @@ public partial class MensajeForo
 
     public DateTime? FechaMensaje { get; set; }
 
-    public virtual PerfilUsuario? IdPerfilUsuariomensajeNavigation { get; set; }
+    public virtual PerfilUsuario IdPerfilUsuariomensajeNavigation { get; set; }
 
     public virtual TemasForo? IdTemaNavigation { get; set; }
 

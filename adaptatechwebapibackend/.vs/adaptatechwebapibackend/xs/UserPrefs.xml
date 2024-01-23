@@ -1,25 +1,35 @@
 ﻿<Properties StartupConfiguration="{64167FF0-A2F2-4C40-A1ED-5619D1F6B3C0}|https">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.adaptatechwebapibackend PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="adaptatechwebapibackend/Models/MensajesForo.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="adaptatechwebapibackend/Controllers/PerfilUsuarioController.cs">
     <Files>
-      <File FileName="adaptatechwebapibackend/scaffold.txt" Line="22" Column="23" />
-      <File FileName="adaptatechwebapibackend/appsettings.Development.json" Line="7" Column="5" />
-      <File FileName="adaptatechwebapibackend/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="adaptatechwebapibackend/Program.cs" Line="50" Column="19" />
-      <File FileName="adaptatechwebapibackend/DTOs/DTOUsuario.cs" Line="7" Column="37" />
-      <File FileName="adaptatechwebapibackend/DTOs/DTOToken.cs" Line="7" Column="42" />
-      <File FileName="adaptatechwebapibackend/Controllers/AuthController.cs" Line="40" Column="42" />
-      <File FileName="adaptatechwebapibackend/Services/HashService.cs" Line="40" Column="10" />
-      <File FileName="adaptatechwebapibackend/Classes/ResultadoHash.cs" Line="7" Column="41" />
-      <File FileName="adaptatechwebapibackend/Services/TokenService.cs" Line="35" Column="97" />
-      <File FileName="adaptatechwebapibackend/appsettings.json" Line="6" Column="6" />
-      <File FileName="adaptatechwebapibackend/Models/MensajesForo.cs" Line="16" Column="50" />
-      <File FileName="adaptatechwebapibackend/Models/PerfilUsuario.cs" Line="6" Column="22" />
-      <File FileName="adaptatechwebapibackend/Models/Usuario.cs" Line="24" Column="41" />
-      <File FileName="adaptatechwebapibackend/Models/AdaptatechContext.cs" Line="1" Column="1" />
+      <File FileName="adaptatechwebapibackend/scaffold.txt" />
+      <File FileName="adaptatechwebapibackend/appsettings.Development.json" />
+      <File FileName="adaptatechwebapibackend/Properties/launchSettings.json" />
+      <File FileName="adaptatechwebapibackend/Program.cs" />
+      <File FileName="adaptatechwebapibackend/DTOs/DTOUsuario.cs" />
+      <File FileName="adaptatechwebapibackend/DTOs/DTOToken.cs" />
+      <File FileName="adaptatechwebapibackend/Controllers/AuthController.cs" />
+      <File FileName="adaptatechwebapibackend/Services/HashService.cs" />
+      <File FileName="adaptatechwebapibackend/Classes/ResultadoHash.cs" />
+      <File FileName="adaptatechwebapibackend/Services/TokenService.cs" />
+      <File FileName="adaptatechwebapibackend/appsettings.json" />
+      <File FileName="adaptatechwebapibackend/Models/PerfilUsuario.cs" />
+      <File FileName="adaptatechwebapibackend/Models/Usuario.cs" />
+      <File FileName="adaptatechwebapibackend/Models/MensajeForo.cs" />
+      <File FileName="adaptatechwebapibackend/Models/TemasForo.cs" />
+      <File FileName="adaptatechwebapibackend/Models/AdaptatechContext.cs" />
+      <File FileName="adaptatechwebapibackend/DTOs/DTOMensajeForo.cs" />
+      <File FileName="adaptatechwebapibackend/Controllers/MensajeForoController.cs" Line="120" Column="14" />
+      <File FileName="adaptatechwebapibackend/Controllers/TemasForoController.cs" />
+      <File FileName="adaptatechwebapibackend/Controllers/PerfilUsuarioController.cs" Line="213" Column="55" />
+      <File FileName="adaptatechwebapibackend/DTOs/DTOPerfilUsuarioPost.cs" Line="3" Column="5" />
+      <File FileName="adaptatechwebapibackend/DTOs/DTOPerfilUsuarioPut.cs" Line="8" Column="41" />
+      <File FileName="adaptatechwebapibackend/DTOs/DTOTemasForoPost.cs" />
+      <File FileName="adaptatechwebapibackend/DTOs/DTOTemasForoPut.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,11 +37,11 @@
           <Node name="adaptatechwebapibackend" expanded="True">
             <Node name="adaptatechwebapibackend" expanded="True">
               <Node name="Classes" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="DTOs" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="MensajesForo.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="PerfilUsuarioController.cs" selected="True" />
               </Node>
+              <Node name="DTOs" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="appsettings.json" expanded="True" />
@@ -44,7 +54,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
