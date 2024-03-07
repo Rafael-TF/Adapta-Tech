@@ -17,11 +17,17 @@ public partial class PerfilUsuario
 
     public DateTime FechaNacimiento { get; set; }
 
-    public byte[]? Avatar { get; set; }
+    public string? Avatar { get; set; }
 
     public string? Alias { get; set; }
 
+    public virtual ICollection<CitaMedica> CitaMedicas { get; set; } = new List<CitaMedica>();
+
+    public virtual ICollection<Medicamento> Medicamentos { get; set; } = new List<Medicamento>();
+
     public virtual ICollection<MensajeForo> MensajeForos { get; set; } = new List<MensajeForo>();
+
+    public virtual ICollection<Testimonio> Testimonios { get; set; } = new List<Testimonio>();
 
     public virtual Usuario? Usuario { get; set; }
 }

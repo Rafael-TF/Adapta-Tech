@@ -19,6 +19,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,13 +27,17 @@
     <None Remove="DTOs\" />
     <None Remove="Services\" />
     <None Remove="Classes\" />
+    <None Remove="DTOs\Medicamentos\" />
+    <None Remove="DTOs\CitasMedicas\" />
+    <None Remove="DTOs\Testimonios\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Services\" />
     <Folder Include="Classes\" />
     <Folder Include="wwwroot\" />
+    <Folder Include="DTOs\Medicamentos\" />
+    <Folder Include="DTOs\CitasMedicas\" />
+    <Folder Include="DTOs\Testimonios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

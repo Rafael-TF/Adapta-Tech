@@ -1,5 +1,8 @@
 ﻿using adaptatechwebapibackend.DTOs;
+using adaptatechwebapibackend.DTOs.PerfilUsuario;
 using adaptatechwebapibackend.Models;
+using adaptatechwebapibackend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +10,8 @@ namespace adaptatechwebapibackend.Controllers
     {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class PerfilUsuarioController : ControllerBase
         {
 
@@ -24,6 +29,8 @@ namespace adaptatechwebapibackend.Controllers
         //Instanciamos el contexto de Entity Framework.
 
         private readonly AdaptatechContext _context;
+        private readonly OperacionesService _operacionesService;
+        private readonly GestorArchivosLocal _gestorArchivosLocal;
 
 
         /**
@@ -32,9 +39,11 @@ namespace adaptatechwebapibackend.Controllers
          * 
          * */
 
-        public PerfilUsuarioController(AdaptatechContext context)
+        public PerfilUsuarioController(AdaptatechContext context, OperacionesService operacionesService, GestorArchivosLocal gestorArchivosLocal)
             {
             _context = context;
+            _operacionesService = operacionesService;
+            _gestorArchivosLocal = gestorArchivosLocal;
             }
 
         /**
@@ -51,6 +60,7 @@ namespace adaptatechwebapibackend.Controllers
 
             var lista = await _context.PerfilUsuarios.ToListAsync();
 
+            await _operacionesService.AddOperacion("Get", "Perfiles");
             return lista;
 
             }
@@ -68,7 +78,10 @@ namespace adaptatechwebapibackend.Controllers
             {
             // Las operaciones contra una base de datos DEBEN SER SIEMPRE ASÍNCRONAS. Para liberar los hilos de ejecución en cada petición, eso no debe hacerse nunca
             var lista = _context.PerfilUsuarios.ToList();
+
+            _operacionesService.AddOperacion("Get", "PerfilesSíncronos");
             return lista;
+
             }
 
         /**
@@ -83,6 +96,8 @@ namespace adaptatechwebapibackend.Controllers
         public async Task<List<PerfilUsuario>> GetPerfilesUsuariosOrdenadosAsc()
             {
             var listaOrdenadaAscendente = await _context.PerfilUsuarios.OrderBy(x => x.FechaNacimiento).ToListAsync();
+
+            await _operacionesService.AddOperacion("Get", "PerfilesFechasAscendentes");
             return listaOrdenadaAscendente;
             }
 
@@ -98,6 +113,8 @@ namespace adaptatechwebapibackend.Controllers
         public async Task<List<PerfilUsuario>> GetPerfilesUsuariosOrdenadosDesc()
             {
             var listaOrdenadaDescendente = await _context.PerfilUsuarios.OrderByDescending(x => x.FechaNacimiento).ToListAsync();
+
+            await _operacionesService.AddOperacion("Get", "PerfilesFechasDescendentes");
             return listaOrdenadaDescendente;
             }
 
@@ -109,7 +126,7 @@ namespace adaptatechwebapibackend.Controllers
          * 
          * */
 
-        [HttpGet("perfilPorId/{id}")]
+        [HttpGet("perfilPorId/{id:int}")]
         public async Task<ActionResult<PerfilUsuario>> GetPerfilUsuarioPorId([FromRoute] int id)
             {
             var perfil = await _context.PerfilUsuarios.FindAsync(id);
@@ -118,6 +135,28 @@ namespace adaptatechwebapibackend.Controllers
                 {
                 return NotFound("El perfil con " + id + " no existe.");
                 }
+
+            await _operacionesService.AddOperacion("Get", "PerfilesPorId");
+            return Ok(perfil);
+            }
+        /**
+         * 
+         * Método GetPerfilUsuarioPorEmail([FromRoute] string email)
+         * 
+         * Devuelve un perfil de usuario correspondiente a un email de USUARIO.
+         * 
+         * */
+
+        [HttpGet("poremail/{email}")]
+        public async Task<ActionResult<PerfilUsuario>> GetPerfilUsuarioPorEmail([FromRoute] string email)
+            {
+            var perfil = await _context.PerfilUsuarios.Where(x => x.Usuario!.Email.Equals(email)).FirstOrDefaultAsync();
+
+            if (perfil == null)
+                {
+                return NotFound("El perfil con email: " + email + " no existe.");
+                }
+            await _operacionesService.AddOperacion("Get", "PerfilPorEmail");
             return Ok(perfil);
             }
 
@@ -138,6 +177,7 @@ namespace adaptatechwebapibackend.Controllers
                 {
                 return NotFound("El perfil con nombre: " + nombre + " no existe.");
                 }
+            await _operacionesService.AddOperacion("Get", "PerfilPorNombre");
             return Ok(perfil);
             }
 
@@ -158,6 +198,7 @@ namespace adaptatechwebapibackend.Controllers
                 {
                 return NotFound("El perfil con apellidos: " + apellidos + " no existe.");
                 }
+            await _operacionesService.AddOperacion("Get", "PerfilPorApellidos");
             return Ok(perfil);
             }
 
@@ -171,23 +212,58 @@ namespace adaptatechwebapibackend.Controllers
          * */
 
         [HttpPost("nuevoPerfil")]
-        public async Task<ActionResult> PostPerfilUsuario([FromBody] DTOPerfilUsuarioPost perfil)
+        public async Task<ActionResult> PostPerfilUsuario([FromBody] DTOPerfilAvatar perfil)
             {
             var newPerfil = new PerfilUsuario()
                 {
 
-                Nombre = perfil.Nombre,
-                Apellidos = perfil.Apellidos,
-                Telefono = perfil.Telefono,
-                FechaNacimiento = perfil.FechaNacimiento,
-                Avatar = perfil.Avatar,
-                Alias = perfil.Alias,
+                Nombre = perfil.NombreDTO,
+                Apellidos = perfil.ApellidosDTO,
+                Telefono = perfil.TelefonoDTO,
+                UsuarioId = perfil.IdUsuarioDTO,
+                FechaNacimiento = perfil.FechaNacimientoDTO,
+                Avatar = "",
+                Alias = perfil.AliasDTO,
 
                 };
+
+            if (perfil.AvatarDTO is not null)
+                {
+
+                using (var memoryStream = new MemoryStream())
+                    {
+                    // Extraemos la imagen de la petición
+                    await perfil.AvatarDTO.CopyToAsync(memoryStream);
+                    // La convertimos a un array de bytes que es lo que necesita el método de guardar
+                    var contenido = memoryStream.ToArray();
+                    DTOArchivo archivo = new DTOArchivo
+                        {
+                        Nombre = perfil.AvatarDTO.FileName,
+                        Contenido = contenido,
+                        Carpeta = "imagenes",
+                        ContentType = perfil.AvatarDTO.ContentType
+                        };
+
+
+                    var nombreArchivo = await _gestorArchivosLocal.GuardarArchivo(archivo.Contenido, archivo.Nombre, archivo.Carpeta, archivo.ContentType);
+
+                    newPerfil.Avatar = nombreArchivo;
+
+                    }
+
+
+                }
+
+
+
             await _context.AddAsync(newPerfil);
             await _context.SaveChangesAsync();
 
-            return Created("PerfilUsuario", new { perfil = newPerfil });
+            await _operacionesService.AddOperacion("Post", "NuevoPerfil");
+            return Created("PerfilUsuario", new
+                {
+                perfil = newPerfil
+                });
             }
 
         /**
@@ -214,13 +290,14 @@ namespace adaptatechwebapibackend.Controllers
             perfilUpdate.Nombre = perfil.Nombre;
             perfilUpdate.Apellidos = perfil.Apellidos;
             perfilUpdate.FechaNacimiento = perfil.FechaNacimiento;
-            // perfilUpdate.Avatar = perfil.Avatar;
+            perfilUpdate.Avatar = perfil.Avatar;
             perfilUpdate.Alias = perfil.Alias;
 
 
             _context.Update(perfilUpdate);
 
             await _context.SaveChangesAsync();
+            await _operacionesService.AddOperacion("Put", "PerfilModificado");
             return NoContent();
             }
 
@@ -245,6 +322,8 @@ namespace adaptatechwebapibackend.Controllers
 
             _context.Remove(perfil);
             await _context.SaveChangesAsync();
+
+            await _operacionesService.AddOperacion("Delete", "PerfilBorrado");
             return Ok();
 
             }

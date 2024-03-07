@@ -1,27 +1,28 @@
 ﻿using System;
-using adaptatechwebapibackend.DTOs;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using adaptatechwebapibackend.DTOs.Usuarios;
+using adaptatechwebapibackend.DTOs.Token;
 
 namespace adaptatechwebapibackend.Services
-{
-	public class TokenService
-	{
+    {
+    public class TokenService
+        {
         private readonly IConfiguration _configuration;
         private readonly HashService _hashService;
 
         public TokenService(IConfiguration configuration, HashService hashService)
-        {
+            {
             _configuration = configuration;
             _hashService = hashService;
-        }
+            }
         // ----------- GENERAR TOKEN --------------
 
         // Método privado para generar un token JWT basado en las credenciales del usuario.
         public DTOToken GenerarToken(DTOUsuario credencialesUsuario)
-        {
+            {
             // Define los claims (información adicional) que se incluirán en el token.
             var claims = new List<Claim>()
     {
@@ -32,7 +33,7 @@ namespace adaptatechwebapibackend.Services
             // Obtiene la clave secreta utilizada para generar el token desde la configuración.
             var clave = _configuration["ClaveJWT"];
             // Crea la clave a partir de la clave secreta obtenida.
-            var claveKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(clave.PadRight(32)));
+            var claveKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(clave));
             var signinCredentials = new SigningCredentials(claveKey, SecurityAlgorithms.HmacSha256);
             // Define las características del token, como los claims, la fecha de expiración y las credenciales de firma.
             var securityToken = new JwtSecurityToken(
@@ -46,11 +47,11 @@ namespace adaptatechwebapibackend.Services
 
             // Retorna un DTO que contiene el token JWT y el email del usuario.
             return new DTOToken()
-            {
+                {
                 Token = tokenString,
                 Email = credencialesUsuario.Email
-            };
+                };
+            }
         }
     }
-}
 

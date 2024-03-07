@@ -1,0 +1,10 @@
+Microsoft.Extensions.DependencyInjection.Abstractions
+Unable to resolve service for type 'Microsoft.AspNetCore.Http.HttpContextAccessor' while attempting to activate 'adaptatechwebapibackend.Controllers.RegistroController'.
+Microsoft.Extensions.DependencyInjection.Abstractions
+Unable to resolve service for type 'Microsoft.AspNetCore.Http.HttpContextAccessor' while attempting to activate 'adaptatechwebapibackend.Controllers.RegistroController'.
+System.Private.CoreLib
+Unable to cast object of type 'System.Byte[]' to type 'System.String'.
+System.Private.CoreLib
+Unable to cast object of type 'System.Byte[]' to type 'System.String'.
+System.Private.CoreLib
+Unable to cast object of type 'System.Byte[]' to type 'System.String'.

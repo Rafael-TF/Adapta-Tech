@@ -15,6 +15,10 @@ public partial class AdaptatechContext : DbContext
     {
     }
 
+    public virtual DbSet<CitaMedica> CitaMedicas { get; set; }
+
+    public virtual DbSet<Medicamento> Medicamentos { get; set; }
+
     public virtual DbSet<MensajeForo> MensajeForos { get; set; }
 
     public virtual DbSet<Operacione> Operaciones { get; set; }
@@ -22,6 +26,8 @@ public partial class AdaptatechContext : DbContext
     public virtual DbSet<PerfilUsuario> PerfilUsuarios { get; set; }
 
     public virtual DbSet<TemasForo> TemasForos { get; set; }
+
+    public virtual DbSet<Testimonio> Testimonios { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
@@ -31,6 +37,35 @@ public partial class AdaptatechContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<CitaMedica>(entity =>
+        {
+            entity.HasKey(e => e.IdCita).HasName("PK__CitaMedi__394B0202BAF081E1");
+
+            entity.ToTable("CitaMedica");
+
+            entity.Property(e => e.CentroMedico).HasMaxLength(100);
+            entity.Property(e => e.DiaSemana).HasMaxLength(15);
+            entity.Property(e => e.Medico).HasMaxLength(50);
+
+            entity.HasOne(d => d.IdPerfilUsuarioNavigation).WithMany(p => p.CitaMedicas)
+                .HasForeignKey(d => d.IdPerfilUsuario)
+                .HasConstraintName("FK__CitaMedic__IdPer__02FC7413");
+        });
+
+        modelBuilder.Entity<Medicamento>(entity =>
+        {
+            entity.HasKey(e => e.IdMedicamento).HasName("PK__Medicame__AC96376ED0A18FAC");
+
+            entity.Property(e => e.DiaSemana).HasMaxLength(20);
+            entity.Property(e => e.Funcion).HasMaxLength(255);
+            entity.Property(e => e.Medicacion).HasMaxLength(60);
+            entity.Property(e => e.Posologia).HasMaxLength(255);
+
+            entity.HasOne(d => d.IdPerfilUsuarioNavigation).WithMany(p => p.Medicamentos)
+                .HasForeignKey(d => d.IdPerfilUsuario)
+                .HasConstraintName("FK__Medicamen__IdPer__74AE54BC");
+        });
+
         modelBuilder.Entity<MensajeForo>(entity =>
         {
             entity.HasKey(e => e.IdMensaje).HasName("PK__MensajeF__E4D2A47FAF77820F");
@@ -41,7 +76,7 @@ public partial class AdaptatechContext : DbContext
 
             entity.HasOne(d => d.IdPerfilUsuariomensajeNavigation).WithMany(p => p.MensajeForos)
                 .HasForeignKey(d => d.IdPerfilUsuariomensaje)
-                .HasConstraintName("FK__MensajeFo__IdPer__4D94879B");
+                .HasConstraintName("FK__MensajeFo__IdPer__71D1E811");
 
             entity.HasOne(d => d.IdTemaNavigation).WithMany(p => p.MensajeForos)
                 .HasForeignKey(d => d.IdTema)
@@ -64,11 +99,11 @@ public partial class AdaptatechContext : DbContext
 
         modelBuilder.Entity<PerfilUsuario>(entity =>
         {
-            entity.HasKey(e => e.IdPerfil).HasName("PK__PerfilUs__C7BD5CC15E3E78C2");
+            entity.HasKey(e => e.IdPerfil).HasName("PK__tmp_ms_x__C7BD5CC18061CE61");
 
             entity.ToTable("PerfilUsuario");
 
-            entity.HasIndex(e => e.Alias, "UQ__PerfilUs__70F4A9E08E2CA3C5").IsUnique();
+            entity.HasIndex(e => e.Alias, "UQ__tmp_ms_x__70F4A9E0C0D1B11A").IsUnique();
 
             entity.Property(e => e.Alias)
                 .HasMaxLength(50)
@@ -76,6 +111,7 @@ public partial class AdaptatechContext : DbContext
             entity.Property(e => e.Apellidos)
                 .HasMaxLength(70)
                 .IsUnicode(false);
+            entity.Property(e => e.Avatar).IsUnicode(false);
             entity.Property(e => e.FechaNacimiento).HasColumnType("datetime");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
@@ -86,7 +122,7 @@ public partial class AdaptatechContext : DbContext
 
             entity.HasOne(d => d.Usuario).WithMany(p => p.PerfilUsuarios)
                 .HasForeignKey(d => d.UsuarioId)
-                .HasConstraintName("FK__PerfilUsu__Usuar__3A81B327");
+                .HasConstraintName("FK__PerfilUsu__Usuar__70DDC3D8");
         });
 
         modelBuilder.Entity<TemasForo>(entity =>
@@ -101,6 +137,17 @@ public partial class AdaptatechContext : DbContext
             entity.HasOne(d => d.IdTemaUsuarioNavigation).WithMany(p => p.TemasForos)
                 .HasForeignKey(d => d.IdTemaUsuario)
                 .HasConstraintName("FK__TemasForo__IdTem__49C3F6B7");
+        });
+
+        modelBuilder.Entity<Testimonio>(entity =>
+        {
+            entity.HasKey(e => e.IdTestimonio).HasName("PK__Testimon__3EFC389F9E21B7D8");
+
+            entity.Property(e => e.Titulo).HasMaxLength(60);
+
+            entity.HasOne(d => d.IdPerfilUsuarioNavigation).WithMany(p => p.Testimonios)
+                .HasForeignKey(d => d.IdPerfilUsuario)
+                .HasConstraintName("FK__Testimoni__IdPer__160F4887");
         });
 
         modelBuilder.Entity<Usuario>(entity =>

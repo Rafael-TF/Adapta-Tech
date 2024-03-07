@@ -1,5 +1,8 @@
 ﻿using adaptatechwebapibackend.DTOs;
+using adaptatechwebapibackend.DTOs.TemasForo;
 using adaptatechwebapibackend.Models;
+using adaptatechwebapibackend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +10,7 @@ namespace adaptatechwebapibackend.Controllers
     {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TemasForoController : ControllerBase
         {
 
@@ -21,9 +25,10 @@ namespace adaptatechwebapibackend.Controllers
 
 
         //Variable objeto _context
-        //Instanciamos el contexto de Entity Framework.
+        //Instanciamos el contexto de Entity Framework.Temas
 
         private readonly AdaptatechContext _context;
+        private readonly OperacionesService _operacionesService;
 
 
         /**
@@ -32,9 +37,10 @@ namespace adaptatechwebapibackend.Controllers
          * 
          * */
 
-        public TemasForoController(AdaptatechContext context)
+        public TemasForoController(AdaptatechContext context, OperacionesService operacionesService)
             {
             _context = context;
+            _operacionesService = operacionesService;
             }
 
         /**
@@ -51,6 +57,7 @@ namespace adaptatechwebapibackend.Controllers
 
             var lista = await _context.TemasForos.ToListAsync();
 
+            await _operacionesService.AddOperacion("Get", "ListaDeTemas");
             return lista;
 
             }
@@ -69,6 +76,7 @@ namespace adaptatechwebapibackend.Controllers
 
             var lista = await _context.TemasForos.Include(x => x.MensajeForos).ToListAsync();
 
+            await _operacionesService.AddOperacion("Get", "ListaDeTemasConMensajes");
             return lista;
 
             }
@@ -86,6 +94,8 @@ namespace adaptatechwebapibackend.Controllers
             {
             // Las operaciones contra una base de datos DEBEN SER SIEMPRE ASÍNCRONAS. Para liberar los hilos de ejecución en cada petición, eso no debe hacerse nunca
             var lista = _context.TemasForos.ToList();
+
+            _operacionesService.AddOperacion("Get", "TemasSíncronos");
             return lista;
             }
 
@@ -101,6 +111,8 @@ namespace adaptatechwebapibackend.Controllers
         public async Task<List<TemasForo>> GetTemasForoOrdenadosAsc()
             {
             var listaOrdenadaAscendente = await _context.TemasForos.OrderBy(x => x.FechaCreacion).ToListAsync();
+
+            await _operacionesService.AddOperacion("Get", "TemasOrdenadosAscendentes");
             return listaOrdenadaAscendente;
             }
 
@@ -116,6 +128,8 @@ namespace adaptatechwebapibackend.Controllers
         public async Task<List<TemasForo>> GetTemasForoOrdenadosDesc()
             {
             var listaOrdenadaDescendente = await _context.TemasForos.OrderByDescending(x => x.FechaCreacion).ToListAsync();
+
+            await _operacionesService.AddOperacion("Get", "TemasOrdenadosDescendentes");
             return listaOrdenadaDescendente;
             }
 
@@ -136,6 +150,8 @@ namespace adaptatechwebapibackend.Controllers
                 {
                 return NotFound("El tema con " + id + " no existe.");
                 }
+
+            await _operacionesService.AddOperacion("Get", "TemasPorId");
             return Ok(tema);
             }
 
@@ -213,73 +229,75 @@ Devuelve un tema del foro con sus correspondientes mensajes.
 
         [HttpGet("temasmensajes/{id}")]
         public async Task<ActionResult<List<DTOTemasMensajes>>> GetTemasForoMensajesSelect(int id)
-        {
-            try
             {
+            try
+                {
                 var temas = await _context.TemasForos
                     .Include(t => t.MensajeForos)
                     .Where(t => t.IdTema == id)
                     .Select(x => new DTOTemasMensajes
-                    {
+                        {
                         IdTemaDTO = x.IdTema,
                         TituloDTO = x.Titulo!,
                         MensajesDTO = x.MensajeForos.Select(y => new DTOMensajesItem
-                        {
+                            {
                             //IdMensajeDTO = y.IdMensaje,
                             IdUsuariomensajeDTO = y.IdUsuariomensaje,
                             IdPerfilUsuariomensajeDTO = y.IdPerfilUsuariomensaje,
                             IdTemaDTO = y.IdTema,
                             TextoDTO = y.Texto!,
                             FechaMensajeDTO = y.FechaMensaje
-                        }).ToList()
-                    })
+                            }).ToList()
+                        })
                     .ToListAsync();
 
                 if (temas.Count == 0)
-                {
+                    {
                     return NotFound("No hay datos de temas de foros");
-                }
+                    }
 
+                await _operacionesService.AddOperacion("Get", "TemasMensajes");
                 return Ok(temas);
-            }
+                }
             catch (Exception ex)
-            {
+                {
                 // Manejo de excepciones, registra el error para debugging
                 Console.WriteLine($"Error al obtener temas y mensajes: {ex.Message}");
                 return StatusCode(500, "Error al obtener temas y mensajes");
+                }
             }
-        }
 
 
 
         [HttpGet("temasmensajes")]
         public async Task<ActionResult<List<DTOTemasMensajes>>> GetTemasForoMensajesSelect()
-        {
+            {
 
             var temas = await (from x in _context.TemasForos.Include(y => y.MensajeForos)
                                select new DTOTemasMensajes
-                               {
+                                   {
                                    IdTemaDTO = x.IdTema,
                                    TituloDTO = x.Titulo!,
                                    MensajesDTO = x.MensajeForos.Select(y => new DTOMensajesItem
-                                   {
+                                       {
                                        IdUsuariomensajeDTO = y.IdUsuariomensaje,
                                        IdPerfilUsuariomensajeDTO = y.IdPerfilUsuariomensaje,
                                        IdTemaDTO = y.IdTema,
                                        TextoDTO = y.Texto!,
                                        FechaMensajeDTO = y.FechaMensaje
 
-                                   }).ToList(),
+                                       }).ToList(),
 
-                               }).ToListAsync();
+                                   }).ToListAsync();
 
             if (temas.Count() == 0)
-            {
+                {
                 return NotFound("No hay datos de temas de foros");
-            }
+                }
 
+            await _operacionesService.AddOperacion("Get", "TemasConMensajes");
             return Ok(temas);
-        }
+            }
 
 
 
@@ -309,6 +327,7 @@ Devuelve un tema del foro con sus correspondientes mensajes.
             await _context.AddAsync(newTema);
             await _context.SaveChangesAsync();
 
+            await _operacionesService.AddOperacion("Post", "NuevoMensaje");
             return Created("TemaForo", new { tema = newTema });
             }
 
@@ -330,6 +349,7 @@ Devuelve un tema del foro con sus correspondientes mensajes.
             var perfilUpdate = await _context.TemasForos.AsTracking().FirstOrDefaultAsync(x => x.IdTema == id);
             if (perfilUpdate == null)
                 {
+
                 return NotFound();
                 }
 
@@ -338,6 +358,8 @@ Devuelve un tema del foro con sus correspondientes mensajes.
             _context.Update(perfilUpdate);
 
             await _context.SaveChangesAsync();
+
+            await _operacionesService.AddOperacion("Put", "ModificarTema");
             return NoContent();
             }
 
@@ -361,6 +383,8 @@ Devuelve un tema del foro con sus correspondientes mensajes.
 
             _context.Remove(tema);
             await _context.SaveChangesAsync();
+
+            await _operacionesService.AddOperacion("Delete", "DeleteTema");
             return Ok();
 
             }
@@ -390,6 +414,8 @@ Devuelve un tema del foro con sus correspondientes mensajes.
 
 
             await _context.Database.ExecuteSqlInterpolatedAsync($@"DELETE FROM TemasForo WHERE IdTema = {id}");
+
+            await _operacionesService.AddOperacion("Delete", "DeleteTemaSQL");
             return Ok();
             }
 

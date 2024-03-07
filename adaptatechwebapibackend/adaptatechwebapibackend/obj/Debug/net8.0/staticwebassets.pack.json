@@ -1,0 +1,137 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/Archivo.txt",
+      "PackagePath": "staticwebassets/Archivo.txt"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/ErrorLog.txt",
+      "PackagePath": "staticwebassets/ErrorLog.txt"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/0bdb1047-acd3-4481-b737-d30f69ab9823descarga.jpeg",
+      "PackagePath": "staticwebassets/imagenes/0bdb1047-acd3-4481-b737-d30f69ab9823descarga.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/44fea028-b03c-4458-a43f-46f6eceeec3ccreative-thinking.png",
+      "PackagePath": "staticwebassets/imagenes/44fea028-b03c-4458-a43f-46f6eceeec3ccreative-thinking.png"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/4766273f-fa84-47e8-85c4-19bf43453fe7IMG_3040.jpeg",
+      "PackagePath": "staticwebassets/imagenes/4766273f-fa84-47e8-85c4-19bf43453fe7IMG_3040.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/4cccbcfa-7635-4b41-9abe-0dbbd0f71492272858385_4886604241377903_616210986419345527_n.jpg",
+      "PackagePath": "staticwebassets/imagenes/4cccbcfa-7635-4b41-9abe-0dbbd0f71492272858385_4886604241377903_616210986419345527_n.jpg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/559d952b-ff64-454d-be22-d7cad16814e5272858385_4886604241377903_616210986419345527_n.jpg",
+      "PackagePath": "staticwebassets/imagenes/559d952b-ff64-454d-be22-d7cad16814e5272858385_4886604241377903_616210986419345527_n.jpg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/62315017-367f-4002-96f8-101eee9c84efImagen 23-1-24 a las 20.39.jpg",
+      "PackagePath": "staticwebassets/imagenes/62315017-367f-4002-96f8-101eee9c84efImagen 23-1-24 a las 20.39.jpg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/68922962-b8dd-40c0-958a-a56995bdf240creative-thinking.png",
+      "PackagePath": "staticwebassets/imagenes/68922962-b8dd-40c0-958a-a56995bdf240creative-thinking.png"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/6b637c89-350e-47bf-83f6-d8f8252e17bbIMG_3040.jpeg",
+      "PackagePath": "staticwebassets/imagenes/6b637c89-350e-47bf-83f6-d8f8252e17bbIMG_3040.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/6e91edf1-e7a7-4715-a533-417cd31c5654images.jpeg",
+      "PackagePath": "staticwebassets/imagenes/6e91edf1-e7a7-4715-a533-417cd31c5654images.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/7171fd29-74ac-4807-9f72-1ea8587fe4c5transhumanism.png",
+      "PackagePath": "staticwebassets/imagenes/7171fd29-74ac-4807-9f72-1ea8587fe4c5transhumanism.png"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/7cbe8d66-b94f-415d-ac60-9846dec959f3272858385_4886604241377903_616210986419345527_n.jpg",
+      "PackagePath": "staticwebassets/imagenes/7cbe8d66-b94f-415d-ac60-9846dec959f3272858385_4886604241377903_616210986419345527_n.jpg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/88797b15-a4b0-4def-8b9e-7724e265862d272858385_4886604241377903_616210986419345527_n.jpg",
+      "PackagePath": "staticwebassets/imagenes/88797b15-a4b0-4def-8b9e-7724e265862d272858385_4886604241377903_616210986419345527_n.jpg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/93f9a51d-f6f8-42d8-b36e-43e1ec7b3354IMG_3040.jpeg",
+      "PackagePath": "staticwebassets/imagenes/93f9a51d-f6f8-42d8-b36e-43e1ec7b3354IMG_3040.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/b07538a2-a9b0-4979-a749-18955e656390firefly.jpg",
+      "PackagePath": "staticwebassets/imagenes/b07538a2-a9b0-4979-a749-18955e656390firefly.jpg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/b6c4e234-588d-4b55-b0d6-06086170383fAvatarChica.jpeg",
+      "PackagePath": "staticwebassets/imagenes/b6c4e234-588d-4b55-b0d6-06086170383fAvatarChica.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/bcb31e9a-983d-4127-b01d-478032980010descarga.jpeg",
+      "PackagePath": "staticwebassets/imagenes/bcb31e9a-983d-4127-b01d-478032980010descarga.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/c05e77e6-279f-4f5b-84ba-5962ac7311ebWhatsApp Image 2023-12-12 at 00.25.11.jpeg",
+      "PackagePath": "staticwebassets/imagenes/c05e77e6-279f-4f5b-84ba-5962ac7311ebWhatsApp Image 2023-12-12 at 00.25.11.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/c58d51e2-8668-4536-b1b1-a4514a24a86dIMG_3040.jpeg",
+      "PackagePath": "staticwebassets/imagenes/c58d51e2-8668-4536-b1b1-a4514a24a86dIMG_3040.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/c8736600-c5a4-412c-9730-586501ec1346imggiraffe.jpeg",
+      "PackagePath": "staticwebassets/imagenes/c8736600-c5a4-412c-9730-586501ec1346imggiraffe.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/d35cea0e-d8df-4996-9c00-eeeb2126c136WhatsApp Image 2023-12-02 at 00.07.37 (1).jpeg",
+      "PackagePath": "staticwebassets/imagenes/d35cea0e-d8df-4996-9c00-eeeb2126c136WhatsApp Image 2023-12-02 at 00.07.37 (1).jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/db50b1f6-e839-4ded-ac06-2e0e06100d16images.jpeg",
+      "PackagePath": "staticwebassets/imagenes/db50b1f6-e839-4ded-ac06-2e0e06100d16images.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/e51d8f72-5267-4196-8e24-ed3e52577dc4creative-thinking.png",
+      "PackagePath": "staticwebassets/imagenes/e51d8f72-5267-4196-8e24-ed3e52577dc4creative-thinking.png"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/e8a39d4f-16bc-458b-8e85-9fcbae4f1aecAvatarRaul.png",
+      "PackagePath": "staticwebassets/imagenes/e8a39d4f-16bc-458b-8e85-9fcbae4f1aecAvatarRaul.png"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/eb5fd4f1-c7bd-4056-841f-6f216576b77bDreamShaper_v7_un_hombre_con_el_pelo_rubio_oscuro_y_piercing_e_0.jpg",
+      "PackagePath": "staticwebassets/imagenes/eb5fd4f1-c7bd-4056-841f-6f216576b77bDreamShaper_v7_un_hombre_con_el_pelo_rubio_oscuro_y_piercing_e_0.jpg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/ec72e191-f84e-422a-99ad-7eafcfbeb01bdescarga.jpeg",
+      "PackagePath": "staticwebassets/imagenes/ec72e191-f84e-422a-99ad-7eafcfbeb01bdescarga.jpeg"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/f0bc1fec-dde1-43cc-8674-201d02013a8ecreative-thinking.png",
+      "PackagePath": "staticwebassets/imagenes/f0bc1fec-dde1-43cc-8674-201d02013a8ecreative-thinking.png"
+    },
+    {
+      "Id": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/wwwroot/imagenes/fd1f2757-1801-48f4-91ce-2a34fda12665user.png",
+      "PackagePath": "staticwebassets/imagenes/fd1f2757-1801-48f4-91ce-2a34fda12665user.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.adaptatechwebapibackend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.adaptatechwebapibackend.props",
+      "PackagePath": "build\\adaptatechwebapibackend.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.adaptatechwebapibackend.props",
+      "PackagePath": "buildMultiTargeting\\adaptatechwebapibackend.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.adaptatechwebapibackend.props",
+      "PackagePath": "buildTransitive\\adaptatechwebapibackend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
