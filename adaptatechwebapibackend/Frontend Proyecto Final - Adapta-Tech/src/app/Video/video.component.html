@@ -1,0 +1,41 @@
+<!-- body -->
+<div class="body">
+  <!-- video container -->
+  <div class="video-container">
+    <!-- contenido tableta -->
+    <div class="contenidoTableta">
+      <!-- tableta -->
+      <div class="tableta">
+        <!-- pantalla -->
+        <div class="pantalla">
+          <video id="my-video" class="video-js" controls preload="auto" poster="#" data-setup='' aria-label="Video"> 
+            <!-- si a la etiqueta video le ponemos la propiedad 'loop' una vez acabe de reproducir, empezaría de nuevo  -->
+            <source src="../../assets/Video_presentacion.mp4" type='video/mp4'>
+          </video>
+        </div>
+        <!-- fin pantalla -->
+      </div>
+      <!-- fin tableta -->
+      <div class="button button-triangle"></div>
+      <div class="button button-circle"></div>
+      <div class="button button-rect"></div>
+    </div>
+    <!-- fin contenido tableta -->
+    <div id="vidtop-content" *ngIf="cuadroVisible" [style.transform]="transform" cdkDrag (cdkDragEnded)="onDragEnd($event)" [style.cursor]="pointerCursor" aria-label="Contenido de video superior"> 
+      <div class="vid-info cdk-drag-placeholder" aria-label="Información de video">
+        <h1 aria-label="Título">ADAPTATECH</h1>
+        <h3 aria-label="Subtítulo">"Empoderando vidas, construyendo inclusión: Tu fuente de recursos para un camino 
+              sin barreras en nuestra plataforma dedicada a personas con discapacidad.
+              Juntos, creamos posibilidades sin límites."</h3>
+        <p><small aria-label="Instrucciones">Arrastra este cuadro para moverlo</small></p>
+        <button class="btn-31" (click)="cerrarCuadro()" aria-label="Botón de comenzar">
+          <span class="text-container">
+            <span id="close-vidtop-content" class="text">COMENCEMOS</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- fin video container -->
+</div>
+<!-- fin body -->

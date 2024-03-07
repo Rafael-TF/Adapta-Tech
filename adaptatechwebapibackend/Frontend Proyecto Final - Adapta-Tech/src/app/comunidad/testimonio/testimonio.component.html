@@ -1,0 +1,105 @@
+<main>
+    <div class="capaNegra">      
+
+        <h1>Testimonios</h1>
+        <p class="p1" [style.fontSize.px]="obtenerTamanoTexto()">Bienvenidos a nuestra comunidad de experiencias y aprendizajes.
+            Aquí, las voces de aquellos que han enfrentado desafíos y han celebrado triunfos se entrelazan, creando un tapiz único de resiliencia y esperanza.
+            Estas son algunas de las experiencias compartidas por miembros valientes de nuestra comunidad.</p>
+   
+        <div class="contenedorTestimonio">
+            <!-- /* 1 */ -->
+            <div class="testimonio" [style.fontSize.px]="obtenerTamanoTexto()">
+                <div class="fotoPerfil1"></div>
+                <h2>Fernando Fuentes <br> Parrales</h2>
+                <h4>Jugador e-sports profesional</h4>
+                <p>"La discapacidad no define quién soy, sino que ha sido una parte fundamental de mi viaje. 
+                    A través de los desafíos, he descubierto una fortaleza interior que nunca imaginé poseer. 
+                    Este espacio es un recordatorio de que nuestras historias, nuestras victorias y nuestras luchas, 
+                    son piezas esenciales de un rompecabezas que nos hace únicos."</p>
+                
+            </div>
+            <!-- /* 2 */ -->
+            <div class="testimonio" [style.fontSize.px]="obtenerTamanoTexto()">
+                <div class="fotoPerfil2"></div>
+                <h2>Miguel Ángel Tirado <br> Fuentes</h2>
+                <h4>Diseñador Css</h4>
+                <p>"Cada día presenta sus propios desafíos, pero he aprendido a abrazar la idea de que la verdadera fuerza radica en cómo enfrentamos estos obstáculos. 
+                    Compartir mis experiencias aquí me permite conectarme con otros que pueden estar atravesando situaciones similares y recordarles que no están solos."</p>
+                
+            </div>
+            <!-- /* 3 */ -->
+            <div class="testimonio" [style.fontSize.px]="obtenerTamanoTexto()">
+                <div class="fotoPerfil3"></div>
+                <h2>Rafael Lavado <br> Giraldez</h2>
+                <h4>Pro back</h4>
+                <p>"Esta comunidad no solo es un espacio para compartir nuestras experiencias individuales, sino también para celebrar nuestras victorias colectivas. 
+                    Juntos, hemos demostrado que la diversidad de habilidades nos hace más fuertes. Cada logro, grande o pequeño, es motivo de celebración y nos impulsa a seguir adelante."</p>
+            <!-- /* 4 */ -->  
+            </div>
+            <div class="testimonio" [style.fontSize.px]="obtenerTamanoTexto()">
+                <div class="fotoPerfil4"></div>
+                <h2>Eloy Morado <br> Palmerez</h2>
+                <h4>Fiel Devoto</h4>
+                <p>"Aquí encontré un refugio de comprensión y empatía. Las palabras de aliento y el apoyo de esta comunidad han sido faros de luz en momentos oscuros. 
+                    Al compartir nuestras historias, construimos puentes de comprensión y derribamos barreras invisibles que a menudo nos separan."</p>
+            <!-- /* 5 */ -->   
+            </div>
+            <div class="testimonio" [style.fontSize.px]="obtenerTamanoTexto()">
+                <div class="fotoPerfil5"></div>
+                <h2>Bob Actor <br> Secundario</h2>
+                <h4>Troubadour</h4>
+                <p>"Mi discapacidad no ha sido un límite, sino un impulso para explorar nuevas formas de adaptación. 
+                    Este espacio me brinda la oportunidad de compartir cómo he aprendido a navegar las olas de la vida con creatividad y resiliencia. 
+                    Juntos, inspiramos la capacidad de adaptarnos y superar cualquier desafío que se cruce en nuestro camino."</p>
+                <!-- /* 6 */ -->
+            </div>
+            <div class="testimonio" [style.fontSize.px]="obtenerTamanoTexto()">
+                <div class="fotoPerfil6"></div>
+                <h2>José Luis <br> Ocho</h2>
+                <h4>Master Teacher</h4>
+                <p>"Cada desafío que he enfrentado ha sido una oportunidad para empoderarme a mí mismo y a quienes me rodean. 
+                    En este rincón de experiencias compartidas, descubrí que nuestra fuerza no se mide por la ausencia de dificultades, sino por nuestra capacidad de transformar esos desafíos en oportunidades de crecimiento y empoderamiento. 
+                    Juntos, somos arquitectos de nuestra propia fortaleza."</p>                
+            </div>
+            <div class="testimonio" *ngFor="let testimonio of getTestimonios" [style.fontSize.px]="obtenerTamanoTexto()">
+                <div class="fotoPerfil" [style.backgroundImage]="'url(' + testimonio.avatar + ')'"></div>
+                <h2>{{testimonio.nombrePerfilUsuario}}</h2>
+                <h4 *ngIf="!testimonioEnEdicionId && testimonio.idPerfilUsuario === perfil.idPerfil" (click)="editarTitulo(testimonio)">{{testimonio.tituloTestimonio}}</h4>
+                <input *ngIf="testimonioEnEdicionId === testimonio.idTestimonio" type="text" [(ngModel)]="testimonio.tituloTestimonio" (keydown.enter)="guardarCambios(testimonio)" class="tituloModificar"  maxlength="25">
+                <p *ngIf="!testimonioEnEdicionId || testimonioEnEdicionId !== testimonio.idTestimonio" (dblclick)="editarTexto(testimonio)">{{testimonio.textoTestimonio}}</p>
+                <textarea *ngIf="testimonioEnEdicionId === testimonio.idTestimonio" [(ngModel)]="testimonio.textoTestimonio" (keydown.enter)="guardarCambios(testimonio)" class="textoModificar" maxlength="300"></textarea>
+                
+                <!-- Botón de modificar y eliminar testimonio -->
+
+                <div class="botonesEliminarYEditar">
+                    <button *ngIf="testimonio.idPerfilUsuario === perfil.idPerfil" class="btn-modificar" (click)="alternarEdicion(testimonio)">
+                        <i class="bi bi-pencil-fill"></i>
+                    </button>
+                    <button *ngIf="testimonio.idPerfilUsuario === perfil.idPerfil" class="btn-eliminar" (click)="eliminarTestimonio(testimonio.idTestimonio, perfil.idPerfil)">
+                        <i class="bi bi-trash3-fill"></i>
+                    </button>
+                </div>
+            </div>                
+        </div>
+    </div>
+</main>
+
+<div class="formularioNuevo">
+    <ng-template [ngIf]="estaLogueado">
+        <form #formulario="ngForm" (ngSubmit)="addTestimonio(formulario)">   
+            <div class="form-group">
+                <label>Título</label>
+                <input type="text" class="form-control" name="titulo" [(ngModel)]="nuevoTestimonio.TituloTestimonio" required maxlength="25" placeholder="Escriba un máximo de 25 carateres" aria-label="Escriba un máximo de 25 carateres"/>
+            </div>    
+            <div class="form-group">
+                <label>Texto</label>
+                <textarea class="form-control textarea" name="texto" [(ngModel)]="nuevoTestimonio.TextoTestimonio" required maxlength="300" placeholder="Escriba un máximo de 300 caracteres" aria-label="Escriba un máximo de 300 caracteres"></textarea>
+            </div>   
+            <div class="boton">
+                <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">
+                    Aceptar
+                </button>
+            </div>
+        </form>
+    </ng-template>
+</div>

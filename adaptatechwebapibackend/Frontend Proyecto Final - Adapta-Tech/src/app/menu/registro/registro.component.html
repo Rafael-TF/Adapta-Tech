@@ -1,0 +1,62 @@
+<div class="contenedor">
+  <div class="contenedorcentrado">
+    <form id="form" class="registroform" #formulario="ngForm" (submit)="register()" aria-label="Formulario de registro">
+      <div class="registro" aria-label="Sección de registro">
+        <h2 class="titulo" aria-label="Título del formulario">Regístrate en nuestra web</h2>
+        <!-- * nick * -->
+        <div class="alias" aria-label="Campo de alias">
+          <label for="alias">Alias de usuario</label>
+          <input [(ngModel)] = "registro.perfilUsuario.alias" type="text" id="alias" name="aliasUsuario" placeholder="Introduce tu alias" aria-label="Introduce tu alias"/>
+        </div>
+        <!-- * email * -->
+        <div class="email" aria-label="Campo de email">
+          <label for="email">Email</label>
+          <input [(ngModel)] = "registro.email" type="text" id="email" name="emailUsuario" placeholder="Introduce tu email" aria-label="Introduce tu email" />
+        </div>
+        <!-- *
+        <div class="emailConf">
+          <label for="confirmarEmail">Confirmar Email</label>
+          <input [(ngModel)] = "registro.email" type="text" id="confirmarEmail" placeholder="Repite tu email" />
+        </div>
+        * -->
+         <!-- * password * -->
+         <div class="password" aria-label="Campo de contraseña">
+          <label for="password">Password</label>
+          <input [(ngModel)] = "registro.password" type="password" id="password" name="contraseñaUsuario" placeholder="Introduzca password" aria-label="Introduce tu contraseña" />
+        </div>
+        <!-- *
+        <div class="passConf">           
+          <label for="confirmarPassword">Confirmar Password</label>
+          <input [(ngModel)] = "registro.password" type="password" id="confirmarPassword" placeholder="Repite tu password" />
+        </div>
+        * -->
+        <!-- * nombre y apellidos * -->        
+        <!-- * nombre y apellidos * -->        
+        <div class="nombre" aria-label="Campo de nombre">
+          <label for="username">Nombre de Usuario/a</label>
+          <input [(ngModel)] = "registro.perfilUsuario.nombre" type="text" id="username" name="nombreUsuario" placeholder="Introduce nombre" aria-label="Introduce tu nombre" />
+        </div>
+        <div class="apellidos" aria-label="Campo de apellidos">
+          <label for="apellidos">Apellido/s</label>
+          <input [(ngModel)] = "registro.perfilUsuario.apellidos" type="text" id="apellidos" name="apellidosUsuario" placeholder="Introduce apellidos" aria-label="Introduce tus apellidos" />
+        </div>
+        <!-- * telefono * -->  
+        <div class="telefono" aria-label="Campo de teléfono">
+          <label for="telefono">Número de teléfono</label>
+          <input [(ngModel)] = "registro.perfilUsuario.telefono" type="text" id="telefono" name="telefonoUsuario" placeholder="Introduce tu número de teléfono" aria-label="Introduce tu número de teléfono" />
+        </div>
+        <!-- * fecha de nacimiento * --> 
+        <div class="fecha" aria-label="Campo de fecha de nacimiento">
+          <label for="fecha">Fecha de nacimiento</label>
+          <input [(ngModel)] = "registro.perfilUsuario.fechaNacimiento" type="date" id="start" name="nacimientoUsuario" value="2018-07-22" min="1950-01-01" max="2050-12-31" aria-label="Introduce tu fecha de nacimiento" />
+        </div>        
+        <!-- * avatar * -->      
+        <div class="avatar" aria-label="Campo de imagen de perfil">
+          <label for="imagen">Imagen de Perfil</label>
+          <input (change)="onFileChange($event)" type="file" id="imagen" placeholder="Introduzca avatar" aria-label="Sube tu imagen de perfil" />
+        </div>
+     
+        <button type="submit" form="miFormulario" (click)="register()" aria-label="Botón de registro">Registrar</button>
+      </div>
+    </form>
+</div>

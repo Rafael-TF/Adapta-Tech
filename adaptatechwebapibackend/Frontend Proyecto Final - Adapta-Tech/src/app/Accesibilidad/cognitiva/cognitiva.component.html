@@ -1,0 +1,40 @@
+<div class="body">
+	<div class="capaNegra">
+		<h1 [style.fontSize.px]="obtenerTamanoTexto()"> Tecnología Inclusiva cognitiva </h1>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">En <strong>Adapta-Tech</strong>, nos comprometemos a brindar una experiencia inclusiva para todos, 
+			incluyendo a aquellos con discapacidad cognitiva. Implementamos estrategias clave como 
+			lenguaje simple y claro, estructura intuitiva de página y navegación, así como iconos e 
+			imágenes explicativas. 
+			Mantenemos un diseño sencillo y un buen contraste para facilitar 
+			la comprensión. 
+			Ofrecemos opciones de personalización, instrucciones claras en formularios 
+			y contenido multimedia accesible. 
+			Nuestra plataforma permite ajustar el tamaño del texto 
+			y proporciona confirmaciones visuales para una experiencia más clara. 
+			Realizamos pruebas con usuarios reales, asegurando que nuestro sitio sea amigable y accesible para todos. 
+			Enfocados en la inclusión, buscamos simplificar la experiencia digital para aquellos con discapacidad cognitiva, 
+			haciendo que nuestro contenido sea claro y accesible a través de herramientas diseñadas para todos</p>
+		<div class="contenedor">
+			<div class="imagenContenedor">
+				<img src="../../../assets/difilcutad_cognitiva/Opciones de Personalización.jpeg" alt="Opciones de Personalización">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://blog.hubspot.es/website/personalizar-sitio-web', '_blank');"> Personalización </button>
+				</div>
+			</div>
+			<div class="imagenContenedor">
+				<img src="../../../assets/difilcutad_cognitiva/Navegación Intuitiva.jpeg"alt="Navegación Intuitiva">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://gaptain.com/blog/18-herramientas-digitales-para-personas-con-discapacidad/', '_blank');"> Nav Intuitiva </button>
+				</div>
+			</div>
+			<div class="imagenContenedor">
+				<img src="../../../assets/difilcutad_cognitiva/Contenido Multimedia Accesible.jpeg" alt="Contenido Multimedia Accesible">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://www.w3.org/WAI/standards-guidelines/wcag/es', '_blank');"> Ctrl de Volumen </button>
+				</div>	
+			</div>
+		</div>
+		<em class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Esta página web es accesible para personas con discapacidad <span>visual</span>, <span>física</span>, <span>auditiva </span>y <span>cognitiva</span>.</em>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Si necesitas ayuda adicional para acceder a la información de esta página, por favor <a class="contacto" routerLink="/contacto" [style.cursor]="pointerCursor">contáctanos</a>.</p>
+	</div>
+</div>

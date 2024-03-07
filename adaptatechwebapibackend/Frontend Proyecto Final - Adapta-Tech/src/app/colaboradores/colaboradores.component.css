@@ -1,0 +1,46 @@
+.body {
+    background-color: beige;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.deslizador {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    background-image:radial-gradient(white, rgb(22, 153, 224));
+    z-index: 2;
+}
+
+.deslizador .diapositiva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: scroll 50s linear infinite;
+    width: calc(200px * 26);
+    background-color: transparent;
+    gap: 10px;
+}
+
+.deslizador .dia {
+    width: 250px;
+    display: flex;
+}
+
+.deslizador .dia img {
+    width: 220px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 13))
+    }
+}

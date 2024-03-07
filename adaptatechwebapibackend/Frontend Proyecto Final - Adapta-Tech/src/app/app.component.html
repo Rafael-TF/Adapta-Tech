@@ -1,0 +1,23 @@
+<div class="body" (mousemove)="moverGuiaCursor($event)"  [style.cursor]="bodyCursor">
+    <app-colaboradores aria-label="Sección de colaboradores"></app-colaboradores>
+    <header>           
+        <app-menu aria-label="Menú de la aplicación"></app-menu> 
+    </header>
+    <main aria-label="Contenido principal">
+        <app-menu-lateral aria-label="Menú lateral de la aplicación"></app-menu-lateral>
+        <router-outlet></router-outlet>
+    </main>
+    <footer>
+        <app-footer aria-label="Pie de página de la aplicación"></app-footer>
+    </footer>
+    <div class="contenedor-cookies" *ngIf="cuadroVisible" aria-label="Contenedor de cookies">
+        <div class="galletitas" aria-label="Aviso de cookies">
+            <h2 aria-label="Título del aviso de cookies">Aviso de Cookies</h2>
+            <p aria-label="Texto del aviso de cookies">Nuestra web utiliza cookies propias y de terceros para gestionar el portal, recabar información sobre la utilización del mismo, mejorar nuestros servicios y mostrarte publicidad relacionada con tus preferencias mediante el análisis de tu navegación. Puedes hacer clic en ACEPTAR para permitir el uso de cookies o ver la configuración de las cookies para ver información detallada y seleccionar qué tipo de cookies deseas aceptar o rechazar.</p>
+            <div class="aceptar" aria-label="Botón de aceptar">
+                <a href="#" (click)="aceptarCookies()" aria-label="Aceptar cookies" class="botonAceptar">Aceptar</a>
+              </div>                
+        </div>
+    </div>
+    <div id="cursor-line" *ngIf="guiaCursorService.activo$ | async" [ngStyle]="{'top.px': cursorPosition.y, 'left.px': cursorPosition.x}"></div>
+</div>

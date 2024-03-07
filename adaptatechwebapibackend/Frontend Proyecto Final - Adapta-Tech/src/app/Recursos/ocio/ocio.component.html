@@ -1,0 +1,45 @@
+<div class="body">
+	<div class="capaNegra">
+		<h1 [style.fontSize.px]="obtenerTamanoTexto()"> OCIO </h1>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">En <strong>Adapta-Tech</strong> creemos que el ocio es un derecho fundamental de todas las personas, independientemente de sus capacidades o limitaciones. Por eso, apoyamos y colaboramos con las instituciones que crean y ofrecen actividades de ocio adaptadas y accesibles para las personas con discapacidad.
+			Nuestra misión es facilitar el acceso a la tecnología y la innovación a las personas con discapacidad, para que puedan disfrutar de una vida plena y participativa. Queremos contribuir a la inclusión social y a la igualdad de oportunidades de este colectivo, que representa más del 10% de la población.
+			En nuestra página web podrás encontrar información sobre los proyectos que desarrollamos, los productos y servicios que ofrecemos y las entidades con las que trabajamos. También podrás contactar con nosotros para solicitar asesoramiento, presupuesto o cualquier otra consulta.       
+			Adapta-Tech es más que una empresa, es una comunidad de personas comprometidas con el ocio inclusivo para las personas con discapacidad. ¿Te unes a nosotros?
+			</p>
+		<div class="contenedor">
+			<div class="fila1">
+				<div class="imagenContenedor">
+					<img src="../../../assets/ocio/OCIO 1.jpg" alt="Andalucía Inclusiva Cocemfe">
+					<div class="botonContenedor">
+						<button [style.cursor]="pointerCursor" onclick="window.open('https://andaluciainclusiva.es/', '_blank');"> Andalucía Inclusiva </button>
+					</div>
+				</div>
+					<div class="imagenContenedor">
+					<img src="../../../assets/ocio/OCIO 2.jpg" alt="Paxis">
+					<div class="botonContenedor">
+						<button [style.cursor]="pointerCursor" onclick="window.open('https://paxisinclusion.org/', '_blank');"> Paxis </button>
+					</div>
+				</div>
+				<div class="imagenContenedor">
+					<img src="../../../assets/ocio/OCIO 3.jpg"alt="Incluocio">
+					<div class="botonContenedor">
+						<button [style.cursor]="pointerCursor" onclick="window.open('https://www.incluocio.org/#', '_blank');"> Incluocio </button>
+					</div>
+				</div>
+			</div>
+			<div class="fila2">
+				<div class="imagenContenedor">
+					<img src="../../../assets/ocio/OCIO 4.jpg" alt="Apamys">
+					<div class="botonContenedor">
+						<button [style.cursor]="pointerCursor" onclick="window.open('https://www.apamys.es/blog/', '_blank');"> Apamys </button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="centrado">
+			<em class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Esta página web es accesible para personas con discapacidad <span>visual</span>, <span>física</span>, <span>auditiva </span>y <span>cognitiva</span>.</em>
+			<p class="texto centrado" [style.fontSize.px]="obtenerTamanoTexto()">Si necesitas ayuda adicional para acceder a la información de esta página, por favor <a class="contacto" routerLink="/contacto" [style.cursor]="pointerCursor">contáctanos</a>.</p>	
+		</div>
+	</div>
+</div>
+

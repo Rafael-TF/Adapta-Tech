@@ -1,0 +1,20 @@
+<mat-sidenav-container aria-label="Contenedor de navegación lateral">
+  <mat-sidenav #sidenav mode="side" opened="false" aria-label="Navegación lateral">
+    <mat-nav-list aria-label="Lista de funciones especiales">
+      <a href="#"><h6 aria-label="Título de funciones especiales">FUNCIONES ESPECIALES</h6></a>
+      <a mat-list-item href="#"(click)="aumentarTexto()" [style.cursor]="pointerCursor" aria-label="Aumentar texto"><i class="fa-solid fa-plus"></i> {{texts?.menuLateral.aumentar}}</a>
+      <a mat-list-item href="#"(click)="disminuirTexto()" [style.cursor]="pointerCursor" aria-label="Disminuir texto"><i class="fa-solid fa-minus"></i> {{texts?.menuLateral.disminuir}}</a>
+      <a mat-list-item href="#" (click)="toggleGuiaCursor()" [style.cursor]="pointerCursor" aria-label="Guía de cursor"><i class="fa-solid fa-mouse"></i> {{texts?.menuLateral.guia}}</a>
+      <a mat-list-item href="#" (click)="toggleContraste()" [style.cursor]="pointerCursor" aria-label="Contraste"><i class="fa-solid fa-circle-half-stroke"></i> {{texts?.menuLateral.contraste}}</a>
+      <a mat-list-item href="#" (click)="toggleInvertirColores()" [style.cursor]="pointerCursor" aria-label="Invertir colores"><i class="fa-solid fa-adjust"></i> {{texts?.menuLateral.invertir}}</a>
+      <a mat-list-item href="#" (click)="cambiarCursorPersonalizado()" [style.cursor]="pointerCursor" aria-label="Cursor personalizado"><i class="fa-solid fa-mouse-pointer"></i> {{texts?.menuLateral.cursor}}</a>
+      <a mat-list-item href="#" (click)="restablecer()" [style.cursor]="pointerCursor" aria-label="Restablecer"><i class="fa-solid fa-arrow-rotate-left"></i> {{texts?.menuLateral.restablecer}}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+ 
+  <mat-sidenav-content aria-label="Contenido de navegación lateral">
+    <button mat-icon-button (click)="sidenav.toggle()" [style.cursor]="pointerCursor" aria-label="Botón de alternar navegación lateral">   
+      <img src="../../assets/logo/persona ciega.png" alt="icono" class="icon-img" aria-label="Icono de persona ciega">
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

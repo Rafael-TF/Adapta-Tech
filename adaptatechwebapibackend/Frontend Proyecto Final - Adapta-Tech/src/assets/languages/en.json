@@ -1,0 +1,62 @@
+{
+    "barraMenu": {
+        "menuRecursos": "Resources",
+        "submenuAyudas": "Aids",
+        "submenuFormacion": "Training",
+        "submenuInclusion": "Inclusion",
+        "submenuOcio": "Leisure",
+        "menuComunidad": "Community",
+        "submenuForo": "Forum",
+        "submenuTestimonios": "Testimonials",
+        "submenuNoticias": "News",
+        "submenuTutoriales": "Tutorials",
+        "menuAccesibilidad": "Accessibility",
+        "submenuVisual": "Visual Difficulty",
+        "submenuFisica": "Physical Difficulty",
+        "submenuAuditiva": "Hearing Difficulty",
+        "submenuCognitiva": "Cognitive Difficulty",
+        "menuAplicaciones": "Applications",
+        "submenuMedicacion": "Medication",
+        "submenuCitaMedica": "Medical Appointment",
+        "submenuCalculadora": "Calculator",
+        "menuDescargas": "Downloads"
+    },
+    "footer": {
+        "inicio": "Home",
+        "equipo": "Team",
+        "contacto": "Contact",
+        "derechos": "© 2024 Adapta-Tech - Andalusia (Spain) | All rights reserved."
+    },
+    "login": {
+        "email": "Email",
+        "pass": "Password",
+        "bienvenido": "Welcome",
+        "registrate": "Register to access all content"
+    },
+    "menuLateral": {
+        "aumentar": "Increase Text",
+        "disminuir": "Decrease Text",
+        "guia": "Cursor Guide",
+        "contraste": "Contrast",
+        "invertir": "Invert Colors",
+        "cursor": "Custom Cursor",
+        "restablecer": "Reset"
+    },
+    "inicio": {
+        "descripcion1": "At",
+        "descripcion2": "our mission is to create an inclusive and accessible space for people with disabilities, where online connectivity becomes an open door to a world of possibilities. We strive to facilitate access to valuable resources and foster meaningful interaction through our platform.",
+        "caracteristica1a": "Direct Connection to Relevant Content: ",
+        "caracteristica1b": "We provide carefully selected links to web pages and online resources specifically aimed at people with disabilities. Our platform acts as a central hub, eliminating barriers and facilitating access to crucial information.",
+        "caracteristica2a": "Discussion Forum and Queries: ",
+        "caracteristica2b": "We create a virtual space where the community can share experiences, ask questions, and find mutual support. The discussion forum is a welcoming place to exchange ideas, advice, and solutions, thus strengthening the bonds among members of our community.",
+        "caracteristica3a": "Inspiring Testimonials: ",
+        "caracteristica3b": "We believe in the power of personal experiences to inspire and motivate. In our testimonials section, individuals have the opportunity to share their stories, triumphs, and challenges. This section highlights the diversity of experiences and provides a space for empathy and understanding.",
+        "invitacion": "Join Our Community:",
+        "beneficio1": "is more than an online platform; it is a constantly growing community. Everyone is welcome, regardless of their ability, and we hope that you will find in our space a place where connection and mutual support flourish.",
+        "beneficio2a": "Discover, share, and join to",
+        "beneficio2b": "today. Together, we create a more connected and inclusive world."
+    }
+    
+    
+    
+}

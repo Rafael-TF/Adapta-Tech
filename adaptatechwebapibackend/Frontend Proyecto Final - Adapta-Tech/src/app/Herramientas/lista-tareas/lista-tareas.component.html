@@ -1,0 +1,60 @@
+<h1 aria-label="Título de la página">Citas Medicas</h1>
+<div class="contenedor">
+  <div class="contenedorcentrado">
+    <ul>
+      <h2 aria-label="Título de la sección">Información sobre las citas</h2>
+      <hr>    
+      <ng-container *ngIf="citaMedica && citaMedica.length > 0; else noCitas">
+        <li *ngFor="let cita of citaMedica" class="cita">
+              <div>
+                <span class="circulo-verde" *ngIf="cita.fechaHora !== null && cita.fechaHora >= hoy()" aria-label="Cita futura"></span>
+                <span class="circulo-rojo" *ngIf="cita.fechaHora !== null && cita.fechaHora < hoy()" aria-label="Cita pasada"></span>
+                <strong>Doctor/a: </strong> <span>{{ cita.medico }}</span>
+              </div>
+              <div class="fecha">
+                <strong>Fecha: </strong> {{ cita.fechaHora | date: 'dd/MM/yyyy' }}
+              </div>
+              <div class="hora">
+                <strong>Hora: </strong> {{ cita.fechaHora | date: 'HH:mm' }}
+              </div>
+              <div>
+                <strong>Centro Médico: </strong> <span>{{ cita.centroMedico }}</span>
+              </div>
+              <!-- <button class="btn-modificar" (click)="UpdateCitaMedica(cita)"><i class="fas fa-edit"></i></button> -->
+              <button class="btn-eliminar" (click)="eliminarCitaMedica(cita.idCita)" aria-label="Eliminar cita"><i class="fas fa-trash-alt"></i></button>
+        </li>
+      </ng-container>
+      <ng-template #noCitas>
+        <p>No hay citas disponibles en este momento.</p>
+      </ng-template>
+    </ul>   
+    <hr>
+    <h2 class="titulo-agregar" aria-label="Título de la sección">Agregar Nueva Cita Médica</h2>
+    <form (ngSubmit)="agregarCita()" class="formulario">
+        <div class="columna1">
+          <div class="form-group">
+            <label for="medico">Médico:</label>
+            <input class="imput-1" type="text" [(ngModel)]="nuevoMedico" name="medico" required aria-label="Campo de texto para el médico">
+          </div>
+          
+          <div class="form-group">
+            <label for="centroMedico">Centro Médico:</label>
+            <input class="imput-4" type="text" [(ngModel)]="nuevoCentroMedico" name="centroMedico" required aria-label="Campo de texto para el centro médico">
+          </div>
+        </div>
+
+        <div class="columna2">
+          <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input class="imput-2" type="date" [(ngModel)]="nuevaFecha" name="fecha" required aria-label="Campo de fecha">
+          </div>
+                
+          <div class="form-group">
+            <label for="hora">Hora:</label>
+            <input class="imput-3" type="time" [(ngModel)]="nuevaHora" name="hora" required aria-label="Campo de hora">
+          </div>
+        </div>
+        <button type="submit" aria-label="Botón de enviar">Agregar</button>
+    </form>
+  </div>
+</div>

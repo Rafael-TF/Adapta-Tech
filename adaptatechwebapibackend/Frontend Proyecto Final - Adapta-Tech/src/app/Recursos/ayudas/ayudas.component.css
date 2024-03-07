@@ -1,0 +1,99 @@
+.body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+p {
+    margin: 15px 0;
+}
+
+.contacto {
+    color: blue;
+}
+
+.texto {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.lista {
+    font-weight: normal;
+    line-height: 30px;
+    text-align: justify;
+    list-style: circle;
+}
+
+strong {
+    color: blue;
+}
+
+span {
+    font-weight: 720;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+
+.imagenContenedor {
+    text-align: center;
+    width: 250px;
+}
+
+.imagenContenedor img {
+    width: 250px;
+    height: 100px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+.imagenContenedor img:hover {
+    box-shadow:  0 0 0 1px black;
+}
+
+.botonContenedor button {
+    margin: 2rem 0;
+}
+
+button {  
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding:.5rem;
+    background-image: linear-gradient(90deg, rgba(32,103,154,1) 0%, rgba(32,103,154,1) 35%, rgba(0,212,255,1) 100%);
+    color: white;
+    width: 15rem;
+    border: 5px outset gray;
+    border-radius: 1rem;
+    text-shadow: 2px 0px 1px;
+    text-align: center;
+}
+
+button:hover {
+    border: 5px outset rgb(13, 81, 137);
+    border-right-color: rgb(54, 190, 240);
+    border-top-color: rgb(51, 137, 208);
+    border-left-color: rgb(33, 83, 185);
+    box-shadow: 0 1px 10px 2px gray
+}
+.capaNegra {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 30px;
+  }

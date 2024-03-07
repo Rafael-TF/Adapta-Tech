@@ -1,0 +1,23 @@
+<div class="contenedor">
+  <div class="contenedorcentrado">
+    <div class="login">
+      <form class="loginform" #formulario="ngForm" (submit)="login()" aria-label="Formulario de inicio de sesión">
+        <label for="usuario">{{texts?.login.email}}</label>
+        <input class="email" [(ngModel)]="usuario.email" type="text" name="email" id="email" placeholder="{{texts?.login.email}}" required aria-label="Campo de email"/> 
+        <label for="password">{{texts?.login.pass}}</label>
+        <input class="password" type="password" [(ngModel)]="usuario.password" placeholder="{{texts?.login.pass}}" name="password" id="password" required aria-label="Campo de contraseña"/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" aria-label="Botón de inicio de sesión">
+          Login
+        </button>
+      </form>
+    </div>
+    <div class="derecho">
+      <div class="titulo" aria-label="Título de bienvenida">{{texts?.login.bienvenido}}</div>
+      <hr />
+      <div class="pie-form">
+        <a routerLink ="/registro" aria-label="Enlace de registro">{{texts?.login.registrate}}</a>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>

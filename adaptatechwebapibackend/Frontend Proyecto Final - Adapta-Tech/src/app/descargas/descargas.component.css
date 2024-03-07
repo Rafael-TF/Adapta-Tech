@@ -1,0 +1,63 @@
+* {
+    text-decoration: none;
+    list-style: none;
+    line-height: 80px;
+}
+
+.body {
+    text-align: center;
+}
+
+h1, h2 {
+  font-size: large;
+  font-weight: bold;
+}
+
+.filas {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  width: 100%;
+}
+
+.filas .primeraFila,
+.filas .segundaFila {
+  justify-self: center;
+  gap: 2rem;
+}
+
+.download-link {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding:.5rem;
+  background-image: linear-gradient(90deg, rgba(32,103,154,1) 0%, rgba(32,103,154,1) 35%, rgba(0,212,255,1) 100%);
+  color: white;
+  border: 5px outset gray;
+  border-radius: 1rem;
+  text-shadow: 1px 0px 1px;
+  text-align: center;
+  width: 500px;
+  height: 100px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.download-link:hover {
+  border: 5px outset rgb(13, 81, 137);
+  border-right-color: rgb(54, 190, 240);
+  border-top-color: rgb(51, 137, 208);
+  border-left-color: rgb(33, 83, 185);
+  box-shadow: 0 1px 10px 2px gray
+}
+
+.capaNegra {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding: 30px;
+}

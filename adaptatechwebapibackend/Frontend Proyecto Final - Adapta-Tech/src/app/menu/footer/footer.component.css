@@ -1,0 +1,75 @@
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+ li {
+  list-style: none;
+ }
+ footer {
+   width: 100%;
+   background: #2667c9dc;
+   /* border-top: 5px double rgb(0, 0, 0); */
+   min-height: 100px;
+   padding: 20px 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.8);
+ 
+ }
+ 
+ .iconos,
+ .aviso {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px 0;
+   flex-wrap: wrap;
+ }
+  
+ .redesFac,
+ .redesTwi,
+ .redesYou,
+ .redesIns {
+   font-size: 2rem;
+   color: #fff;
+   margin: 0 10px;
+   display: inline-block;
+   transition: 0.5s;
+ }
+
+ .redesFac:hover {
+  color: rgb(9, 78, 240);
+ }
+
+ .redesTwi:hover {
+   color: rgba(0, 251, 255, 0.7);
+ }
+
+ .redesYou:hover {
+  color: red;
+ }
+ 
+ .redesIns:hover {
+  color: #bc2a8d;
+ }
+ 
+ .info {
+   font-size: 1.2rem;
+   color: #ffffff;
+   margin: 0 10px;
+   display: inline-block;
+   transition: 0.5s;
+   text-decoration: none;
+   font-weight: 300;
+ }
+ 
+ .info:hover {
+   color: rgba(0, 251, 255, 0.7);
+ }
+ 
+footer p {
+   color: #fff;
+   margin: 15px 0 10px 0;
+   font-size: 1rem;
+   font-weight: 300;
+ }
+ 

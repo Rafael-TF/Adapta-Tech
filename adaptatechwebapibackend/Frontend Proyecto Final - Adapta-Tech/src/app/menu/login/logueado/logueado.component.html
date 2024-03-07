@@ -1,0 +1,36 @@
+<div class="contenedorPrincipal">
+    <div class="contenedor">
+        <h2 aria-label="Saludo de bienvenida">Bienvenido {{ perfil.alias }}</h2>
+    
+        <fieldset>
+            <button class="btn-modificar" (click)="alternarEdicion()" aria-label="Botón para modificar perfil">
+                <i class="fas fa-edit"></i>
+            </button>
+            <div class="perfil-info" aria-label="Información de perfil">
+                <img *ngIf="avatarUrl" [src]="avatarUrl" alt="Avatar del perfil">
+                <div class="perfil-details" aria-label="Detalles del perfil">
+                    <p><strong>Nombre: </strong>
+                        <ng-container *ngIf="!edicionHabilitada; else editarNombre">{{ perfil.nombre }}</ng-container>
+                        <ng-template #editarNombre><input type="text" [(ngModel)]="perfil.nombre" [disabled]="!edicionHabilitada" aria-label="Campo de nombre"></ng-template>
+                    </p>
+                    <p><strong>Apellidos: </strong>
+                        <ng-container *ngIf="!edicionHabilitada; else editarApellidos">{{ perfil.apellidos }}</ng-container>
+                        <ng-template #editarApellidos><input type="text" [(ngModel)]="perfil.apellidos" [disabled]="!edicionHabilitada" aria-label="Campo de apellidos"></ng-template>
+                    </p>
+                    <p><strong>Alias: </strong>
+                        <ng-container *ngIf="!edicionHabilitada; else editarAlias">{{ perfil.alias }}</ng-container>
+                        <ng-template #editarAlias><input type="text" [(ngModel)]="perfil.alias" [disabled]="!edicionHabilitada" aria-label="Campo de alias"></ng-template>
+                    </p>
+                    <p><strong>Fecha de Nacimiento: </strong>
+                        <ng-container *ngIf="!edicionHabilitada; else editarFechaNacimiento">{{ perfil.fechaNacimiento | date: 'dd/MM/yyyy' }}</ng-container>
+                        <ng-template #editarFechaNacimiento><input type="date" [(ngModel)]="perfil.fechaNacimiento" [disabled]="!edicionHabilitada" aria-label="Campo de fecha de nacimiento"></ng-template>
+                    </p>
+                    <p><strong>Teléfono: </strong>
+                        <ng-container *ngIf="!edicionHabilitada; else editarTelefono">{{ perfil.telefono }}</ng-container>
+                        <ng-template #editarTelefono><input type="text" [(ngModel)]="perfil.telefono" [disabled]="!edicionHabilitada" aria-label="Campo de teléfono"></ng-template>
+                    </p>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

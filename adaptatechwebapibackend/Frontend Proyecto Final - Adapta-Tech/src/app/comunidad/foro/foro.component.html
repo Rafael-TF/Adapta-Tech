@@ -1,0 +1,26 @@
+<form class="temanuevo" *ngIf="mostrarBotonTema">
+  <input type="text" id="nuevotema" name="nuevotema" rows="4" cols="50" [(ngModel)]="nombreNuevoTema" aria-label="Introduce el nombre del nuevo tema"/>
+  <button type="button" class="botonTema" (click)="addTema()" aria-label="Añadir nuevo tema">Nuevo tema</button>
+</form>
+<nav>
+  <ul *ngIf="mostrarTodosLosTemas">
+    <li *ngFor="let tema of temasForo; let i = index" [ngClass]="getClaseTema(i)">
+      <span (click)="cambiaTema(tema.idTema!, tema.titulo)" title="Cambiar a tema {{ tema.titulo }}">
+        {{ tema.titulo }}
+      </span>
+    </li>
+  </ul>
+  <h2 *ngIf="!mostrarTodosLosTemas">{{ tituloTemaSeleccionado }}</h2>
+  <div class="botonVolver">
+    <button *ngIf="!mostrarTodosLosTemas" (click)="mostrarTodosLosTemas = true; volverMostrarTodosLosTemas()" aria-label="Volver a todos los temas">Volver</button>
+  </div>
+</nav>
+
+<!-- CONTENDOR DE TEMAS -->
+<app-table-tema  *ngIf="mostrarTablaTema" [mensajes]="mensajesForo"></app-table-tema>
+<!--  -->
+
+<form *ngIf="mostrarBotonMensaje" class="temanuevo2">
+  <input type="text" id="nuevomensaje" name="nuevomensaje" [(ngModel)]="textoNuevoMensaje" aria-label="Introduce tu mensaje" />
+  <button type="button" (click)="addMensaje()" aria-label="Añadir mensaje">Añade mensaje</button>
+</form>

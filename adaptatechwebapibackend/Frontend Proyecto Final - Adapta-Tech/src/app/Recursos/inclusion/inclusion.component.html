@@ -1,0 +1,40 @@
+<div class="body">
+	<div class="capaNegra">
+		<h1 [style.fontSize.px]="obtenerTamanoTexto()"> INCLUSIÓN </h1>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">En <strong>Adapta-Tech</strong>, apostamos por la inclusión de las personas con discapacidad
+			en todos los ámbitos de la vida. 
+			Por eso, nuestra plataforma está diseñada para ser accesible, usable y atractiva para todos 
+			los usuarios, independientemente de sus habilidades. 
+			Nuestra misión es facilitar el acceso a la información, la comunicación y la educación a través 
+			de la tecnología, y promover la participación activa y el empoderamiento de las personas con discapacidad. 
+			Nuestros valores se basan en el respeto, la diversidad, la igualdad y la innovación. 
+			Queremos que cada persona se sienta parte de nuestra comunidad, y que pueda aprovechar al máximo
+			las oportunidades que ofrece nuestra plataforma.</p>
+		<div class="contenedor">
+			<!-- * -->
+			<div class="imagenContenedor">
+				<img src="../../../assets/inclusion/INCLUSION1.jpeg" alt="Accesibilidad">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://fundacionaon.es/mejorando-inclusion-personas-con-discapacidad-2023/', '_blank');"> Accesibilidad </button>
+				</div>
+			</div>
+			<!-- * -->
+			<div class="imagenContenedor">
+				<img src="../../../assets/inclusion/INCLUSION2.jpeg"alt="Educación inclusiva">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://www.cdc.gov/ncbddd/spanish/disabilityandhealth/disability-inclusion.html', '_blank');"> Educación inclusiva </button>
+				</div>
+			</div>
+			<!-- * -->
+			<div class="imagenContenedor">
+				<img src="../../../assets/inclusion/INCLUSION3.jpeg" alt="Empleo inclusivo">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://www.once.es/servicios-sociales/apoyo-al-empleo', '_blank');"> Empleo inclusivo </button>
+				</div>
+			</div>
+			<!-- * -->
+		</div>
+		<em class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Esta página web es accesible para personas con discapacidad <span>visual</span>, <span>física</span>, <span>auditiva </span>y <span>cognitiva</span>.</em>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Si necesitas ayuda adicional para acceder a la información de esta página, por favor <a class="contacto" routerLink="/contacto" [style.cursor]="pointerCursor">contáctanos</a>.</p>	 
+	</div>
+</div>

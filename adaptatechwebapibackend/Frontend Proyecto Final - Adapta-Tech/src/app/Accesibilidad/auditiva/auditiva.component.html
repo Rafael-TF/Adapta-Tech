@@ -1,0 +1,39 @@
+<div class="body">
+	<div class="capaNegra">
+		<h1 [style.fontSize.px]="obtenerTamanoTexto()"> Inclusión Sonora </h1>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">En <strong>Adapta-Tech</strong>, nos dedicamos a proporcionar una experiencia inclusiva, 
+			especialmente para aquellos con dificultades auditivas. Implementamos características 
+			clave para garantizar la accesibilidad, como subtítulos y transcripciones para contenido multimedia. 
+			Nuestro diseño claro y sencillo facilita la comprensión visual, mientras que los controles 
+			ajustables permiten a los usuarios personalizar su experiencia. Además, nos esforzamos por 
+			mantener una presentación clara de información y proporcionar opciones de alerta visual 
+			para eventos importantes. 
+			La compatibilidad con tecnologías de asistencia, como dispositivos de vibración, asegura 
+			que nuestra plataforma sea accesible para todos. 
+			Con pruebas continuas y la retroalimentación de usuarios reales, 
+			trabajamos para crear una experiencia en línea que sea inclusiva 
+			y equitativa para cada visitante, independientemente de sus habilidades auditivas.</p>
+		<div class="contenedor">
+			<div class="imagenContenedor">
+				<img src="../../../assets/dificultad _auditiva/Subtítulos y Transcripciones.jpeg" alt="Subtítulos y Transcripciones">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://es.ava.me/', '_blank');"> Subtítulos </button>
+				</div>
+			</div>
+			<div class="imagenContenedor">
+				<img src="../../../assets/dificultad _auditiva/ojo-primer-plano-iris-color_1268-26881.jpeg"alt="Alertas Visuales">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://gaptain.com/blog/18-herramientas-digitales-para-personas-con-discapacidad/', '_blank');"> Alertas Visuales </button>
+				</div>
+			</div>
+			<div class="imagenContenedor">
+				<img src="../../../assets/dificultad _auditiva/control volumen.jpeg" alt="Controles de Volumen ">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://www.insuit.net/es/tipos-discapacidad-accesibilidad-web/', '_blank');"> Control Volumen </button>
+				</div>
+			</div>
+		</div>
+		<em class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Esta página web es accesible para personas con discapacidad <span>visual</span>, <span>física</span>, <span>auditiva </span>y <span>cognitiva</span>.</em>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Si necesitas ayuda adicional para acceder a la información de esta página, por favor <a class="contacto" routerLink="/contacto" [style.cursor]="pointerCursor">contáctanos</a>.</p>
+	</div>
+</div>

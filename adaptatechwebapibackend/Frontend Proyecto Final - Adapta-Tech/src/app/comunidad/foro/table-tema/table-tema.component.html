@@ -1,0 +1,21 @@
+<div id="tema1" class="tema">
+  <!-- Tabla para Datos de Mensajes -->
+  <table aria-label="Tabla de mensajes del foro">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Mensaje</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mensaje of mensajes">
+        <td>{{ mensaje.alias }}</td>
+        <td>{{ mensaje.texto }}</td>
+        <td>
+          {{ formatearFecha(mensaje.fechaMensaje!) }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

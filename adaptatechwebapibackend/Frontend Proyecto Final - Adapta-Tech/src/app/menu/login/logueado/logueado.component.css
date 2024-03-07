@@ -1,0 +1,81 @@
+.contenedorPrincipal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 50px;
+    width: 50%;
+    background-color: transparent;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+fieldset {
+    background-color: rgba(26, 196, 202, 0.415);
+    padding: 20px;
+    width: 60%;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.perfil-info {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.perfil-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+p {
+    width: 200px;
+}
+
+.btn-modificar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: auto;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.7);
+}
+
+.btn-modificar {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-modificar i {
+  font-size: 20px;
+}

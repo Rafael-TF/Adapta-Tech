@@ -1,0 +1,98 @@
+* {
+  list-style: none;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+}
+
+p:hover, .l1:hover, .l2:hover, .l3:hover, .l4:hover,.l5:hover{
+  color: rgba(0, 0, 0, 0.408);
+}
+.lista li:hover span {
+  color: rgba(0, 0, 0, 0.733);
+}
+
+.cuadro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 20px 100px 20px 100px;
+  border: 4px solid #353535;
+  background-color: #3586ff;
+  box-shadow: 0px 7px 30px -5px rgba(0,0,0,1);
+  transition: transform 0.3s ease-in-out;
+  display: block;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    text-shadow: -1px -1px 0 rgb(60, 63, 63), 1px -1px 0 rgb(24, 23, 24), 1px 1px rgb(8, 8, 8), -1px 1px 0 rgb(81, 85, 85);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+}
+
+
+p {
+  margin: 30px 0;
+}
+
+.form {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.contacto {
+  color: blue;
+}
+
+.texto {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.lista {
+  font-weight: normal;
+  line-height: 30px;
+  text-align: justify;
+  list-style: circle;
+}
+
+strong {
+  color: blue;
+}
+
+span {
+  font-weight: 750;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+li {
+  margin-top: 10px;
+  font-weight: 600;
+}
+.capaNegra {
+  background-color: rgba(25, 134, 211, 0.5);
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding: 30px;
+}

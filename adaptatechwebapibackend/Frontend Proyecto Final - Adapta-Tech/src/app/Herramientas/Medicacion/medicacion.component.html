@@ -1,0 +1,188 @@
+<div class="body">
+  <div class="worko-tabs">
+    <input class="state" type="radio" title="tab-one" name="tabs-state" id="tab-one" value="Lunes" (click)="cambiarDia('Lunes')" aria-label="Lunes"/>
+    <input class="state" type="radio" title="tab-two" name="tabs-state" id="tab-two" value="Martes" (click)="cambiarDia('Martes')" aria-label="Martes"/>
+    <input class="state" type="radio" title="tab-three" name="tabs-state" id="tab-three" value="Miercoles" (click)="cambiarDia('Miercoles')" aria-label="Miércoles"/>
+    <input class="state" type="radio" title="tab-four" name="tabs-state" id="tab-four" value="Jueves" (click)="cambiarDia('Jueves')" aria-label="Jueves"/>
+    <input class="state" type="radio" title="tab-five" name="tabs-state" id="tab-five" value="Viernes" (click)="cambiarDia('Viernes')" aria-label="Viernes"/>
+    <input class="state" type="radio" title="tab-six" name="tabs-state" id="tab-six" value="Sabado" (click)="cambiarDia('Sabado')" aria-label="Sábado"/>
+    <input class="state" type="radio" title="tab-seven" name="tabs-state" id="tab-seven" value="Domingo" (click)="cambiarDia('Domingo')" aria-label="Domingo"/>
+    <!-- ------------------ -->
+    <div class="tabs flex-tabs">
+      <label for="tab-one" id="tab-one-label" class="tab">LUNES</label>
+      <label for="tab-two" id="tab-two-label" class="tab">MARTES</label>
+      <label for="tab-three" id="tab-three-label" class="tab">MIÉRCOLES</label>
+      <label for="tab-four" id="tab-four-label" class="tab">JUEVES</label>
+      <label for="tab-five" id="tab-five-label" class="tab">VIERNES</label>
+      <label for="tab-six" id="tab-six-label" class="tab">SÁBADO</label>
+      <label for="tab-seven" id="tab-seven-label" class="tab">DOMINGO</label>
+      <!-- --------LUNES---------- -->
+      <div id="tab-one-panel" class="panel active">
+        <div class="tab-content">
+          <ng-container *ngIf="medicacionPorDia && medicacionPorDia.length > 0; else noMedicamentos">
+            <!-- Si medicacionPorDia no está vacío, mostrar los medicamentos -->
+            <div class="form-section" *ngFor="let medicamento of medicacionPorDia; let i = index" (click)="getMedicamentosPorDia()">
+              <h3>Medicación {{ i + 1 }}</h3>
+              <div>
+                <input type="text" autocomplete="off" name="medicamento" class="input" placeholder="Medicamento" [(ngModel)]="medicamento.medicacion">
+                <input type="text" autocomplete="off" name="posologia" class="input" placeholder="Posología" [(ngModel)]="medicamento.posologia">
+                <input type="text" autocomplete="off" name="funcion" class="input" placeholder="Función" [(ngModel)]="medicamento.funcion">
+                <button class="btn-modificar" (click)="modificarMedicamento(medicamento)"><i class="fas fa-edit"></i></button>
+                <button class="btn-eliminar" (click)="eliminarMedicamento(medicamento.idMedicamento)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Si medicacionPorDia está vacío, mostrar el mensaje -->
+          <ng-template #noMedicamentos>
+            <p>No hay medicamentos para este día.</p>
+          </ng-template>
+        </div>   
+      </div>
+       
+      <!-- --------MARTES---------- -->
+      <div id="tab-two-panel" class="panel active">
+        <div class="tab-content">
+          <ng-container *ngIf="medicacionPorDia && medicacionPorDia.length > 0; else noMedicamentos">
+            <!-- Si medicacionPorDia no está vacío, mostrar los medicamentos -->
+            <div class="form-section" *ngFor="let medicamento of medicacionPorDia; let i = index" (click)="getMedicamentosPorDia()">
+              <h3>Medicación {{ i + 1 }}</h3>
+              <div>
+                <input type="text" autocomplete="off" name="medicamento" class="input" placeholder="Medicamento" [(ngModel)]="medicamento.medicacion">
+                <input type="text" autocomplete="off" name="posologia" class="input" placeholder="Posología" [(ngModel)]="medicamento.posologia">
+                <input type="text" autocomplete="off" name="funcion" class="input" placeholder="Función" [(ngModel)]="medicamento.funcion">
+                <button class="btn-modificar" (click)="modificarMedicamento(medicamento)"><i class="fas fa-edit"></i></button>
+                <button class="btn-eliminar" (click)="eliminarMedicamento(medicamento.idMedicamento)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Si medicacionPorDia está vacío, mostrar el mensaje -->
+          <ng-template #noMedicamentos>
+            <p>No hay medicamentos para este día.</p>
+          </ng-template>
+        </div>   
+      </div>
+      
+      <!-- ---------MIERCOLES--------- -->
+      <div id="tab-three-panel" class="panel active">
+        <div class="tab-content">
+          <ng-container *ngIf="medicacionPorDia && medicacionPorDia.length > 0; else noMedicamentos">
+            <!-- Si medicacionPorDia no está vacío, mostrar los medicamentos -->
+            <div class="form-section" *ngFor="let medicamento of medicacionPorDia; let i = index" (click)="getMedicamentosPorDia()">
+              <h3>Medicación {{ i + 1 }}</h3>
+              <div>
+                <input type="text" autocomplete="off" name="medicamento" class="input" placeholder="Medicamento" [(ngModel)]="medicamento.medicacion">
+                <input type="text" autocomplete="off" name="posologia" class="input" placeholder="Posología" [(ngModel)]="medicamento.posologia">
+                <input type="text" autocomplete="off" name="funcion" class="input" placeholder="Función" [(ngModel)]="medicamento.funcion">
+                <button class="btn-modificar" (click)="modificarMedicamento(medicamento)"><i class="fas fa-edit"></i></button>
+                <button class="btn-eliminar" (click)="eliminarMedicamento(medicamento.idMedicamento)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Si medicacionPorDia está vacío, mostrar el mensaje -->
+          <ng-template #noMedicamentos>
+            <p>No hay medicamentos para este día.</p>
+          </ng-template>
+        </div>   
+      </div>
+      
+      <!-- ---------JUEVES--------- -->
+      <div id="tab-four-panel" class="panel active">
+        <div class="tab-content">
+          <ng-container *ngIf="medicacionPorDia && medicacionPorDia.length > 0; else noMedicamentos">
+            <!-- Si medicacionPorDia no está vacío, mostrar los medicamentos -->
+            <div class="form-section" *ngFor="let medicamento of medicacionPorDia; let i = index" (click)="getMedicamentosPorDia()">
+              <h3>Medicación {{ i + 1 }}</h3>
+              <div>
+                <input type="text" autocomplete="off" name="medicamento" class="input" placeholder="Medicamento" [(ngModel)]="medicamento.medicacion">
+                <input type="text" autocomplete="off" name="posologia" class="input" placeholder="Posología" [(ngModel)]="medicamento.posologia">
+                <input type="text" autocomplete="off" name="funcion" class="input" placeholder="Función" [(ngModel)]="medicamento.funcion">
+                <button class="btn-modificar" (click)="modificarMedicamento(medicamento)"><i class="fas fa-edit"></i></button>
+                <button class="btn-eliminar" (click)="eliminarMedicamento(medicamento.idMedicamento)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Si medicacionPorDia está vacío, mostrar el mensaje -->
+          <ng-template #noMedicamentos>
+            <p>No hay medicamentos para este día.</p>
+          </ng-template>
+        </div>         
+      </div>
+      <!-- ---------VIERNES--------- -->
+      <div id="tab-five-panel" class="panel active">
+        <div class="tab-content">
+          <ng-container *ngIf="medicacionPorDia && medicacionPorDia.length > 0; else noMedicamentos">
+            <!-- Si medicacionPorDia no está vacío, mostrar los medicamentos -->
+            <div class="form-section" *ngFor="let medicamento of medicacionPorDia; let i = index" (click)="getMedicamentosPorDia()">
+              <h3>Medicación {{ i + 1 }}</h3>
+              <div>
+                <input type="text" autocomplete="off" name="medicamento" class="input" placeholder="Medicamento" [(ngModel)]="medicamento.medicacion">
+                <input type="text" autocomplete="off" name="posologia" class="input" placeholder="Posología" [(ngModel)]="medicamento.posologia">
+                <input type="text" autocomplete="off" name="funcion" class="input" placeholder="Función" [(ngModel)]="medicamento.funcion">
+                <button class="btn-modificar" (click)="modificarMedicamento(medicamento)"><i class="fas fa-edit"></i></button>
+                <button class="btn-eliminar" (click)="eliminarMedicamento(medicamento.idMedicamento)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Si medicacionPorDia está vacío, mostrar el mensaje -->
+          <ng-template #noMedicamentos>
+            <p>No hay medicamentos para este día.</p>
+          </ng-template>
+        </div>        
+      </div>
+      <!-- ---------SABADO--------- -->
+      <div id="tab-six-panel" class="panel active">
+        <div class="tab-content">
+          <ng-container *ngIf="medicacionPorDia && medicacionPorDia.length > 0; else noMedicamentos">
+            <!-- Si medicacionPorDia no está vacío, mostrar los medicamentos -->
+            <div class="form-section" *ngFor="let medicamento of medicacionPorDia; let i = index" (click)="getMedicamentosPorDia()">
+              <h3>Medicación {{ i + 1 }}</h3>
+              <div>
+                <input type="text" autocomplete="off" name="medicamento" class="input" placeholder="Medicamento" [(ngModel)]="medicamento.medicacion">
+                <input type="text" autocomplete="off" name="posologia" class="input" placeholder="Posología" [(ngModel)]="medicamento.posologia">
+                <input type="text" autocomplete="off" name="funcion" class="input" placeholder="Función" [(ngModel)]="medicamento.funcion">
+                <button class="btn-modificar" (click)="modificarMedicamento(medicamento)"><i class="fas fa-edit"></i></button>
+                <button class="btn-eliminar" (click)="eliminarMedicamento(medicamento.idMedicamento)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Si medicacionPorDia está vacío, mostrar el mensaje -->
+          <ng-template #noMedicamentos>
+            <p>No hay medicamentos para este día.</p>
+          </ng-template>
+        </div>    
+      </div>
+      <!-- --------DOMINGO---------- -->
+      <div id="tab-seven-panel" class="panel active">
+        <div class="tab-content">
+          <ng-container *ngIf="medicacionPorDia && medicacionPorDia.length > 0; else noMedicamentos">
+            <!-- Si medicacionPorDia no está vacío, mostrar los medicamentos -->
+            <div class="form-section" *ngFor="let medicamento of medicacionPorDia; let i = index" (click)="getMedicamentosPorDia()">
+              <h3>Medicación {{ i + 1 }}</h3>
+              <div>
+                <input type="text" autocomplete="off" name="medicamento" class="input" placeholder="Medicamento" [(ngModel)]="medicamento.medicacion">
+                <input type="text" autocomplete="off" name="posologia" class="input" placeholder="Posología" [(ngModel)]="medicamento.posologia">
+                <input type="text" autocomplete="off" name="funcion" class="input" placeholder="Función" [(ngModel)]="medicamento.funcion">
+                <button class="btn-modificar" (click)="modificarMedicamento(medicamento)"><i class="fas fa-edit"></i></button>
+                <button class="btn-eliminar" (click)="eliminarMedicamento(medicamento.idMedicamento)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Si medicacionPorDia está vacío, mostrar el mensaje -->
+          <ng-template #noMedicamentos>
+            <p>No hay medicamentos para este día.</p>
+          </ng-template>
+        </div>        
+      </div>
+    </div>
+  </div>
+  <div class="contenedorFormulario">
+    <div class="agregarFormulario">
+      <input type="text" autocomplete="off" name="nombreNuevoMedicamento" class="input" placeholder="Nombre del medicamento" [(ngModel)]="nombreNuevoMedicamento" aria-label="Nombre del medicamento">
+      <input type="text" autocomplete="off" name="nuevaPosologiaMedicamento" class="input" placeholder="Posología" [(ngModel)]="nuevaPosologiaMedicamento" aria-label="Posología">
+      <input type="text" autocomplete="off" name="nuevaFuncionMedicamento" class="input" placeholder="Función" [(ngModel)]="nuevaFuncionMedicamento" aria-label="Función">
+    </div>
+    <div class="botonera">
+      <button (click)="addMedicacion()" aria-label="Agregar">Agregar</button>
+    </div>
+  </div>
+</div>

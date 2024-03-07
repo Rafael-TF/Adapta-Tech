@@ -1,0 +1,22 @@
+<footer aria-label="Pie de página">
+  <ul class="iconos" aria-label="Iconos de redes sociales">
+    <li class="social-icon__item"><a class="redesFac" href="https://www.facebook.com/profile.php?id=61555804875723" target="_blank" [style.cursor]="pointerCursor" aria-label="Facebook">
+      <i class="fab fa-facebook-f icon" id="face"></i>
+      </a></li>
+    <li class="social-icon__item"><a class="redesTwi" href="https://twitter.com/TechAdapta"target="_blank" [style.cursor]="pointerCursor" aria-label="Twitter">
+      <i class="fab fa-twitter icon" id="twi"></i>
+      </a></li>
+    <li class="social-icon__item"><a class="redesYou" href="https://www.youtube.com/channel/UCM5faPNeGnfIUYtz6MU0qMw"target="_blank" [style.cursor]="pointerCursor" aria-label="YouTube">
+      <i class="fa-brands fa-youtube" id="you"></i>
+      </a></li>
+    <li class="social-icon__item"><a class="redesIns" href="https://www.instagram.com/adaptatechsev/"target="_blank" [style.cursor]="pointerCursor" aria-label="Instagram">
+      <i class="fa-brands fa-instagram" id="insta"></i>
+      </a></li>
+  </ul>
+  <ul class="aviso" aria-label="Menú de navegación">
+    <li class="menu__item"><a class="info" routerLink="/inicio" [style.cursor]="pointerCursor" aria-label="Inicio">{{texts?.footer.inicio}}</a></li>
+    <li class="menu__item"><a class="info" routerLink="/equipo" [style.cursor]="pointerCursor" aria-label="Equipo">{{texts?.footer.equipo}}</a></li>
+    <li class="menu__item"><a class="info" routerLink="/contacto" [style.cursor]="pointerCursor" aria-label="Contacto">{{texts?.footer.contacto}}</a></li>
+  </ul>
+  <p aria-label="Derechos de autor">{{texts?.footer.derechos}}</p>
+</footer>

@@ -1,0 +1,59 @@
+{
+    "barraMenu": {
+        "menuRecursos": "Recursos",
+        "submenuAyudas": "Ayudas",
+        "submenuFormacion": "Formación",
+        "submenuInclusion": "Inclusión",
+        "submenuOcio": "Ocio",
+        "menuComunidad": "Comunidad",
+        "submenuForo": "Foro",
+        "submenuTestimonios": "Testimonios",
+        "submenuNoticias": "Noticias",
+        "submenuTutoriales": "Tutoriales",
+        "menuAccesibilidad": "Accesibilidad",
+        "submenuVisual": "Dificultad Visual",
+        "submenuFisica": "Dificultad Física",
+        "submenuAuditiva": "Dificultad Auditiva",
+        "submenuCognitiva": "Dificultad Cognitiva",
+        "menuAplicaciones": "Aplicaciones",
+        "submenuMedicacion": "Medicación",
+        "submenuCitaMedica": "Cita Médica",
+        "submenuCalculadora": "Calculadora",
+        "menuDescargas": "Descargas"
+    },
+    "footer": {
+        "inicio": "Inicio",
+        "equipo": "Equipo",
+        "contacto": "Contacto",
+        "derechos": "© 2024 Adapta-Tech - Andalucía (España) | Todos los derechos reservados."
+    },
+    "login": {
+        "email": "Email",
+        "pass": "Contraseña",
+        "bienvenido": "Bienvenido",
+        "registrate": "Regístrate para acceder a todo el contenido"
+    },
+    "menuLateral": {
+        "aumentar": "Aumentar Texto",
+        "disminuir": "Disminuir Texto",
+        "guia": "Guía Cursor",
+        "contraste": "Contraste",
+        "invertir": "Invertir Colores",
+        "cursor": "Cursor Personalizado",
+        "restablecer": "Restablecer"
+    },
+    "inicio": {
+        "descripcion1": "En",
+        "descripcion2": "nuestra misión es crear un espacio inclusivo y accesible para personas con discapacidad, donde la conectividad en línea se convierte en una puerta abierta a un mundo de posibilidades. Nos esforzamos por facilitar el acceso a recursos valiosos y fomentar la interacción significativa a través de nuestra plataforma.",
+        "caracteristica1a": "Conexión Directa a Contenidos Relevantes: ",
+        "caracteristica1b": "Proporcionamos enlaces cuidadosamente seleccionados a páginas web y recursos en línea específicamente destinados a personas con discapacidad. Nuestra plataforma actúa como un hub central, eliminando barreras y facilitando el acceso a información crucial.",
+        "caracteristica2a": "Foro de Discusión y Consultas: ",
+        "caracteristica2b": "Creamos un espacio virtual donde la comunidad puede compartir experiencias, hacer preguntas y encontrar apoyo mutuo. El foro de discusión es un lugar acogedor para intercambiar ideas, consejos y soluciones, fortaleciendo así los lazos entre los miembros de nuestra comunidad",
+        "caracteristica3a": "Testimonios Inspiradores: ",
+        "caracteristica3b": "Creemos en el poder de las experiencias personales para inspirar y motivar. En nuestro apartado de testimonios, las personas tienen la oportunidad de compartir sus historias, triunfos y desafíos. Esta sección destaca la diversidad de experiencias y proporciona un espacio para la empatía y la comprensión.",
+        "invitacion": "Únete a Nuestra Comunidad: ",
+        "beneficio1": "es más que una plataforma en línea; es una comunidad en constante crecimiento. Todos son bienvenidos, independientemente de su capacidad, y esperamos que encuentres en nuestro espacio un lugar donde la conexión y el apoyo mutuo florezcan.",
+        "beneficio2a": "Descubre, comparte y únete a ",
+        "beneficio2b": "hoy. Juntos, creamos un mundo más conectado e inclusivo."
+    }
+}

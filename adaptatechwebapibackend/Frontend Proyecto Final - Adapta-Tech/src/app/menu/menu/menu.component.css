@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.secciones {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    grid-template-areas: "login menu logo";
+  }
+
+/* Estructura login */
+  .login {
+    grid-area: login;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: #2667c9f0;;
+    color: white;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    height: 80px;
+    box-shadow: 0 5px 5px 0px black;
+}
+
+/* Estructura menú */
+.menu {
+    grid-area: menu;
+    height: 80px;
+}
+
+ /* Barra desplegable */
+ .angular {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2667c9;
+    color: white;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    box-shadow: 0 5px 5px 0px black;
+    height: 80px;
+    width: 100%;
+    border-left: 2px solid black;
+    border-right: 2px solid black; 
+    
+}
+
+/* Ocultar desplegable 1 */
+.angular .desplegable1 {
+    display: none;
+}
+/* Mostrar desplegable 1 */
+.angular li:hover .desplegable1 {
+    display: block;
+    position: absolute;
+    padding: 1rem 1.5rem 2rem 1rem;
+    width: 250px;
+    height: auto;
+    border-top: 5px solid rgb(52, 58, 235);
+    background-color: #2667c9;  
+    margin-top: auto;
+    animation: rotar 0.5s ease backwards;
+    border-radius: 0 0 10px 10px;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg); 
+  }
+}
+
+/* Ocultar desplegable 2 */
+.angular .desplegable1 .desplegable2{
+    display: none;
+}
+
+/* Mostrar desplegable 2  */
+.angular li:hover .desplegable1 li:hover .desplegable2{
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    padding: 1rem 1.5rem 2rem 1rem;
+    width: 150px;
+    z-index: 1;
+    background-color: #2667c9; 
+}
+/* Estructura logo */
+.logo {
+    grid-area: logo;
+    display:flexbox;
+    justify-content: center;
+    background-color: #2667c9;
+    height: 80px;
+    box-shadow: 0 5px 5px 0px black;
+}
+
+.logo .container {
+    border: 4px solid red;
+    padding: 20px;
+    
+}
+
+.logo img {
+    width: 120px;
+    height: 95px;
+}
+/****************/
+.contenedorLogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    height: 50px;
+}
+.fotoLogo {
+    margin-right: 10px;
+    margin-top: -6px;
+}
+
+.banderas {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 50px;
+    gap: 10px;
+}
+.banderaItem img {
+    width: 40px;
+    height: 20px;
+    border-radius: 30px;
+}
+
+/* para cuando la clase bandera esté activa que aplique este pequeñisisisimo cambio */
+.banderaItem.active {
+    box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+/****************/
+
+/* Encabezado de primer nivel */
+h1 {
+    text-align: center;
+    width: 100%;
+    margin: 0px auto;
+    font-size: 30px;
+    letter-spacing: 5px;
+
+    text-shadow: -1px -1px 0px #2196f3,
+        3px 3px 0px #2196f3,
+        6px 6px 0px #00000055;
+}
+
+p {
+    margin: 20px 0 0 20px;
+    color: black;
+    font-weight: bolder;
+}
+/* Enlaces */
+a {
+    color: white;
+    text-shadow: 
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+   text-decoration: none;
+}
+
+.a:hover {
+    padding: .5rem;
+    border-radius: 0.5rem;
+    box-shadow: inset 1px 1px 1px black;
+    background-color: rgb(52, 58, 235);
+    font-size: small;
+    display: block;
+    transition: all 1s ease;
+}
+.login a { 
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+.login .aavatar:hover {
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.login a:hover {
+    border-radius: 0.5rem;
+    box-shadow: inset 1px 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+img {
+    border-radius: 50%;
+}
+
+/* para hacerlo responsive */
+
+@media only screen and (max-width: 1280px) {
+    .secciones {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-areas: "menu menu"
+                             "login logo";
+        gap: 1rem;
+        justify-content: center;
+      }
+    .menu {
+        grid-area: menu;
+    }
+    .login {
+        grid-area: login;
+        margin-left: 5px;
+    }
+    .logo {
+        grid-area: logo;
+    }
+}

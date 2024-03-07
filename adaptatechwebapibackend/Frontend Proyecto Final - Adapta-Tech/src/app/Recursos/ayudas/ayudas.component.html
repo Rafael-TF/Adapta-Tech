@@ -1,0 +1,52 @@
+<div class="body" [style.fontSize.px]="obtenerTamanoTexto()">	
+	<div class="capaNegra">
+		<h1 [style.fontSize.px]="obtenerTamanoTexto()"> Descubre las Ayudas para Personas con Discapacidad</h1>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">En <strong>Adapta-Tech</strong>, te ofrecemos información detallada sobre las valiosas ayudas disponibles para personas con discapacidad <em>visual</em>, <em>física</em>, <em>auditiva</em> y <em>cognitiva</em> en el gobierno español. Estas medidas están diseñadas para mejorar la calidad de vida y fomentar la inclusión. Algunas de las ayudas destacadas son:</p>
+
+		<ul class="lista">
+			<li><span>Beneficios Fiscales</span>: Exenciones y deducciones para aliviar la carga financiera.</li>
+			<li><span>Tarjetas Especiales de Transporte</span>: Facilitan la movilidad en el transporte público.</li>
+			<li><span>Empleo Público y Privado</span>: Programas de inclusión laboral y apoyo en el ámbito laboral.</li>
+			<li><span>Prestaciones Económicas</span>: Ayudas económicas para garantizar un nivel de vida adecuado.</li>
+			<li><span>Ayudas para la Movilidad</span>: Subvenciones para la adaptación de vehículos y facilidades de transporte.</li>
+			<li><span>Ayudas para la Comunicación</span>: Dispositivos y tecnologías que mejoran la comunicación.</li>
+			<li><span>Ayudas para la Visión y Cognición</span>: Equipos como lupas, audífonos, agendas y otros recursos esenciales.</li>
+		</ul>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()"> Además, se brindan:</p>
+		<ul class="lista">
+			<li><span>Para Adaptación de Viviendas y Vehículos</span>: Para hacer tu entorno más accesible.</li>
+			<li><span>Garantía de Ingresos Mínimos</span>: Asegurando un sustento económico adecuado.</li>
+			<li><span>Ayuda de Tercera Persona</span>: Asistencia para tareas cotidianas.</li>
+			<li><span>Compensación por Gastos de Transporte</span>: Facilitando la movilidad diaria.</li>
+		</ul> 
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Estas ayudas abarcan una amplia gama de necesidades, desde exenciones fiscales hasta sillas de ruedas y dispositivos especializados. Para información detallada sobre ayudas específicas, te invitamos a explorar nuestras secciones especializadas. </p>
+			
+		<div class="contenedor">
+			<!-- * -->
+				<div class="imagenContenedor">
+					<img src="../../../assets/ayuda/bono_social1.png" alt=" Logo de Bono social">
+					<div class="botonContenedor">
+						<button [style.cursor]="pointerCursor" onclick="window.open('enlace_externo_1', '_blank');"> Bono Social </button>
+					</div>
+				</div>
+			<!-- * -->
+				<div class="imagenContenedor">
+					<img src="../../../assets/ayuda/Junta_Andalucia.png" alt="Logo Junta de Andalucia">
+					<div class="botonContenedor">
+						<button [style.cursor]="pointerCursor" onclick="window.open('https://www.juntadeandalucia.es/temas/familias-igualdad/discapacidad/prestaciones.html#toc-subvenciones-para-la-inclusi-n-de-la-juventud-con-discapacidad', '_blank');"> Prestaciones </button>
+					</div>
+				</div>
+			<!-- * -->
+				<div class="imagenContenedor">
+					<img src="../../../assets/ayuda/logo_fundacion_once.png" alt="Logo de la Fundacion Once">
+					<div class="botonContenedor">
+						<button [style.cursor]="pointerCursor" onclick="window.open('https://www.fundaciononce.es/es/que-hacemos/proyectos-y-solicitudes-de-ayuda', '_blank');"> Solicitudes </button>
+					</div>
+				</div>
+			</div>
+			
+		
+		<em class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Esta página web es accesible para personas con discapacidad <span>visual</span>, <span>física</span>, <span>auditiva </span>y <span>cognitiva</span>.</em>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Si necesitas ayuda adicional para acceder a la información de esta página, por favor <a class="contacto" routerLink="/contacto" [style.cursor]="pointerCursor">contáctanos</a>.</p>
+	</div>
+</div>

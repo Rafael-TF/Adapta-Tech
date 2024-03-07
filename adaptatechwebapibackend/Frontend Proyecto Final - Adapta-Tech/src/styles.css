@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-image: url(./assets/fondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .contraste-activo {
+    background-color: #000;
+    color: white;
+    background-image: none;
+  }
+
+  body.invertir-colores {
+    filter: invert(1) hue-rotate(180deg);
+  }
+

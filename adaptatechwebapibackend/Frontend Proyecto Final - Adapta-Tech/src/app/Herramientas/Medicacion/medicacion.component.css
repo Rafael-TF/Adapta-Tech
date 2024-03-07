@@ -1,0 +1,253 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column; /* Cambiado a 'column' */
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 10px;
+  background-color: #5b87d3;
+  border-radius: 6px;
+  border: 2px double black;
+}
+
+.input {
+  width: 400px;
+  margin-top: 1em;
+  height: 45px;
+  box-shadow: inset 2px 5px 10px rgba(247, 246, 246, 0.3);
+  outline: none;
+  padding: 1em;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;  
+  color: rgb(10, 10, 10);
+  background-color: #0ec8f7;
+  border: 4px double black;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor .input:valid,
+.contenedor .input:focus {
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(5, 135, 228, 0.505),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(5, 202, 209, 0.547);
+}
+
+.worko-tabs{
+    margin: 20px;
+  	width: 50%;
+ }
+
+.state{
+    position: absolute;
+    left: -10000px;
+}
+  
+.flex-tabs{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} 
+
+.flex-tabs .tab{
+  flex-grow: 1;
+  max-height: 40px;
+}
+
+.flex-tabs .tab:active{
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.input:focus {
+  background-color: rgb(134, 210, 240);
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+.panel {
+  background-color: #2667c9dc;
+  padding: 20px;
+  max-height: 500px;
+  display: none;
+  width: 100%;
+  flex-basis: auto;
+  border-radius: 0 0 2rem 2rem;
+  overflow-y: scroll;
+  flex-wrap: wrap; /* Añadido */
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px;
+  vertical-align: top;
+  background-color: #eee;
+  cursor: hand;
+  cursor: pointer;
+  border-left: 10px solid #ccc;
+}  
+
+.tab:hover{
+  background-color: #50beed;
+}
+
+#tab-one:checked ~ .tabs #tab-one-label,
+#tab-two:checked ~ .tabs #tab-two-label,
+#tab-three:checked ~ .tabs #tab-three-label,
+#tab-four:checked ~ .tabs #tab-four-label,
+#tab-five:checked ~ .tabs #tab-five-label,
+#tab-six:checked ~ .tabs #tab-six-label,
+#tab-seven:checked ~ .tabs #tab-seven-label{
+    background-color: #2667c9dc;
+    color: white;
+    cursor: default;
+    border-left-color: #2a5be2;
+}
+
+#tab-one:checked ~ .tabs #tab-one-panel,
+#tab-two:checked ~ .tabs #tab-two-panel,
+#tab-three:checked ~ .tabs #tab-three-panel,
+#tab-four:checked ~ .tabs #tab-four-panel,
+#tab-five:checked ~ .tabs #tab-five-panel,
+#tab-six:checked ~ .tabs #tab-six-panel,
+#tab-seven:checked ~ .tabs #tab-seven-panel{
+    display: block;
+}
+
+#tab-one-label {
+  border-radius: 2rem 0 0 0;
+}
+#tab-seven-label {
+  border-radius: 0 2rem 0 0;
+}
+
+h3,p {
+  color: rgb(211, 241, 247);
+}
+h3 {
+  font-weight:bolder;
+  font-size: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.input::placeholder {
+  color: #00080f; /* Replace with your desired color code for the placeholder text */
+}
+.botonera {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  
+}
+button {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding: .5rem;
+  background-image: linear-gradient(90deg, rgba(32, 103, 154, 1) 0%, rgba(32, 103, 154, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  width: 200px;
+  border: 5px outset rgb(22, 132, 223);
+  border-radius: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 rgb(12, 28, 211),
+    1px -1px 0 rgb(14, 47, 210),
+    1px 1px 0 rgb(7, 20, 163),
+    -1px 1px 0 rgb(115, 18, 235);
+}
+
+button:hover {
+  border: 5px outset rgb(13, 81, 137);
+  border-right-color: rgb(54, 190, 240);
+  border-top-color: rgb(51, 137, 208);
+  border-left-color: rgb(33, 83, 185);
+  box-shadow: 0 1px 10px 2px black;
+}
+.tab-content {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.contenedorPrueba {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.form-section {
+  margin-right: 20px; /* Ajusta según sea necesario */
+}
+/* Añade estas reglas CSS al final de tu archivo CSS existente */
+
+.form-section {
+  margin-bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos uno debajo del otro */
+}
+
+/* Estilos para los botones de modificar y eliminar */
+.btn-modificar,
+.btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px; /* Tamaño del icono */
+  margin-left: 8px; /* Espacio entre el icono y el texto */
+  padding: 5px; /* Ajusta el relleno interno del botón */
+  border-radius: 50%; /* Hace que el botón sea redondo */
+  width: 30px; /* Ancho del botón */
+  height: 30px; /* Alto del botón */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.7); /* Retroiluminación con más luz */
+}
+
+
+
+/* Estilos específicos para el botón de modificar */
+.btn-modificar {
+  background-color: #3498db; /* Azul más claro */
+  color: white; /* Texto en blanco para mejor contraste */
+}
+
+/* Estilos específicos para el botón de eliminar */
+.btn-eliminar {
+  background-color: #e74c3c; /* Rojo */
+  color: white; /* Texto en blanco para mejor contraste */
+}
+
+/* Estilos para hacer los iconos un poco más grandes */
+.btn-modificar i,
+.btn-eliminar i {
+  font-size: 20px;
+}
+
+.circulo-verde {
+  height: 15px;
+  width: 15px;
+  background-color: #00FF00; /* Verde */
+  border-radius: 50%; /* Para hacerlo circular */
+  display: inline-block; /* Para que se muestre en línea con el texto */
+}
+
+.circulo-rojo {
+  height: 15px;
+  width: 15px;
+  background-color: #FF0000; /* Rojo */
+  border-radius: 50%; /* Para hacerlo circular */
+  display: inline-block; /* Para que se muestre en línea con el texto */
+}

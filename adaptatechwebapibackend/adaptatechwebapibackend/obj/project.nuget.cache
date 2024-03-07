@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RQwj14oa97fGYIFgxbZbUcBe79Z15ndKmio3hMfkc3wrQa1pHaipCl3NpwuWPphwCDrfBynd0b/6QWjLQOgAuA==",
+  "dgSpecHash": "zruZ3Zrh48tSkuvAgvTghHgKFRPakT0CpHefHuCu8fgKjOs4ee9m/+J+oxudsI/Rr2ea09GTul/o2UAgxX6NKg==",
   "success": true,
-  "projectFilePath": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
+  "projectFilePath": "/Users/rafaeltravadofernandez/Desktop/Curso desarrollo web/AdaptaTech/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
   "expectedPackageFiles": [
     "/Users/rafaeltravadofernandez/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/rafaeltravadofernandez/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",

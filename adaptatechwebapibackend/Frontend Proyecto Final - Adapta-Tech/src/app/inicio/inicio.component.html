@@ -1,0 +1,20 @@
+<div class="body" [style.fontSize.px]="obtenerTamanoTexto()">  
+  <div class="cuadro">
+    <h1 aria-label="Título de la empresa"> ADAPTA - TECH</h1> 
+  </div>
+  <div class="capaNegra">
+    <div class="form">
+      <p class="texto" [style.fontSize.px]="obtenerTamanoTexto()" aria-label="Descripción de Adapta-Tech">{{texts?.inicio.descripcion1}} <strong>Adapta-Tech</strong>, {{texts?.inicio.descripcion2}}</p>
+      <ul class="lista" aria-label="Lista de características">               
+        <li class="l1" aria-label="Característica 1"><span>{{texts?.inicio.caracteristica1a}} </span>{{texts?.inicio.caracteristica1b}}</li>
+        <li class="l2" aria-label="Característica 2"><span>{{texts?.inicio.caracteristica2a}} </span>{{texts?.inicio.caracteristica2b}}</li>
+        <li class="l3" aria-label="Característica 3"><span>{{texts?.inicio.caracteristica3a}} </span>{{texts?.inicio.caracteristica3b}}</li>        
+      </ul>
+      <p class="texto" [style.fontSize.px]="obtenerTamanoTexto()" aria-label="Invitación a unirse a la comunidad">{{texts?.inicio.invitacion}} </p>
+      <ul class="lista" aria-label="Lista de beneficios">
+        <li class="l4" aria-label="Beneficio 1"><span><strong>Adapta-Tech </strong>{{texts?.inicio.beneficio1}}</span></li>
+        <li class="l5" aria-label="Beneficio 2"><span>{{texts?.inicio.beneficio2a}} <strong>Adapta-Tech </strong>{{texts?.inicio.beneficio2b}}</span></li>
+      </ul> 
+    </div>
+  </div>
+</div>

@@ -1,0 +1,212 @@
+.contenedor {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    min-width: 380px;
+    max-width: 85%;
+    width: 85%;
+    background-color: #5b87d375;  
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);  
+    padding: 30px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+h1 {
+    text-align: center;
+    border: 2px double blue; 
+    border-radius: 8px; 
+    padding: 0;
+    margin-left: 350px;
+    margin-right: 350px;
+    background-image:radial-gradient(white, rgb(22, 153, 224));
+    box-shadow: 0px 0px 20px 8px rgba(0,0,0,0.2);
+}
+
+label {
+    color: #faf8f8;
+}
+
+.contenedorcentrado {
+    width: 80%;
+    min-width: 320px;
+    padding: 30px 30px 50px 30px;
+    background-color: rgba(64, 131, 247, 0.5);
+    box-shadow: 0px 0px 20px 8px rgba(0,0,0,0.15);
+    border: 4px double black;
+    border-radius: 20px;
+    box-sizing: border-box;
+    opacity: 1;
+    filter: alpha(opacity=1);
+}
+.contenedorcentrado li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+  grid-column: span 2;
+  justify-self: center;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  padding: .5rem;
+  background-image: linear-gradient(90deg, rgba(32, 103, 154, 1) 0%, rgba(32, 103, 154, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  width: 300px;
+  border: 5px outset rgb(22, 132, 223);
+  border-radius: 1rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 rgb(12, 28, 211),
+      1px -1px 0 rgb(14, 47, 210),
+      1px 1px 0 rgb(7, 20, 163),
+      -1px 1px 0 rgb(115, 18, 235);
+  }
+  
+  button:hover {
+    border: 5px outset rgb(13, 81, 137);
+    border-right-color: rgb(54, 190, 240);
+    border-top-color: rgb(51, 137, 208);
+    border-left-color: rgb(33, 83, 185);
+    box-shadow: 0 1px 10px 2px black;
+  }
+
+  ul {
+    color: white;
+  }
+
+  /*******************/
+
+  .pasada {
+    background-color: red;
+  }
+  
+  .futura {
+    background-color: green;
+  }
+
+  .circulo-verde {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: green;
+  }
+  
+  .circulo-rojo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  .cita {
+    margin-bottom: 20px;
+  }
+
+  .formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  margin-top: 20px;
+}
+
+.columna1 {
+  margin-left: auto;
+}
+
+.columna2 {
+  margin-right: auto;
+}
+
+.titulo-agregar {
+    text-align: center;
+    color: white;
+}
+
+.imput-doctor,
+.imput-fecha,
+.imput-hora,
+.imput-centroMedico {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+.imput-1,
+.imput-2,
+.imput-3,
+.imput-4 {
+    border-radius: 2rem;
+    box-shadow: 5px 5px 5px black;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+
+.btn-modificar,
+.btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 8px;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px; 
+  height: 30px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.7); 
+}
+
+.btn-modificar {
+  background-color: #3498db; 
+  color: white; 
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white; 
+}
+
+.btn-modificar i,
+.btn-eliminar i {
+  font-size: 20px;
+}
+
+input[type="date"]::placeholder,
+input[type="time"]::placeholder {
+    color: transparent;
+}
+
+input[type="date"]:focus::placeholder,
+input[type="time"]:focus::placeholder {
+    color: #6c757d;
+}
+
+input {
+  margin-right: 40px;
+}

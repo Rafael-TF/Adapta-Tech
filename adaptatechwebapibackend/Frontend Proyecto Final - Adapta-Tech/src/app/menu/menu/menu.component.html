@@ -1,0 +1,77 @@
+<div class="secciones">
+    <header class="menu">
+        <nav class="nav" id="nav">
+            <ul class="angular" aria-label="Lista de menús">                         
+                <li aria-label="Menú de recursos">{{texts?.barraMenu.menuRecursos}}
+                    <ul class="desplegable1" aria-label="Submenú de recursos">
+                        <li><a routerLink="/ayudas" class="a" [style.cursor]="pointerCursor" aria-label="Ayudas">{{texts?.barraMenu.submenuAyudas}}</a></li>
+                        <li><a routerLink="/formacion" class="a" [style.cursor]="pointerCursor" aria-label="Formación">{{texts?.barraMenu.submenuFormacion}}</a></li>
+                        <li><a routerLink="/inclusion" class="a" [style.cursor]="pointerCursor" aria-label="Inclusión">{{texts?.barraMenu.submenuInclusion}}</a></li>
+                        <li><a routerLink="/ocio" class="a" [style.cursor]="pointerCursor" aria-label="Ocio">{{texts?.barraMenu.submenuOcio}}</a></li>
+                    </ul>
+                </li>
+                <li aria-label="Menú de comunidad">{{texts?.barraMenu.menuComunidad}}
+                    <ul class="desplegable1" aria-label="Submenú de comunidad">
+                        <li><a routerLink="/foro" class="a" [style.cursor]="pointerCursor" aria-label="Foro">{{texts?.barraMenu.submenuForo}}</a></li>
+                        <li><a routerLink="/testimonios" class="a" [style.cursor]="pointerCursor" aria-label="Testimonios">{{texts?.barraMenu.submenuTestimonios}}</a></li>
+                        <li><a routerLink="/noticias" class="a" [style.cursor]="pointerCursor" aria-label="Noticias">{{texts?.barraMenu.submenuNoticias}}</a></li>
+                        <li><a routerLink="/enlaces" class="a" [style.cursor]="pointerCursor" aria-label="Tutoriales">{{texts?.barraMenu.submenuTutoriales}}</a></li>
+                    </ul>
+                </li>
+                <li aria-label="Menú de accesibilidad">{{texts?.barraMenu.menuAccesibilidad}}
+                    <ul class="desplegable1" aria-label="Submenú de accesibilidad">
+                        <li><a routerLink="/visual" class="a" [style.cursor]="pointerCursor" aria-label="Dificultad Visual">{{texts?.barraMenu.submenuVisual}}</a></li>
+                        <li><a routerLink="/fisica" class="a" [style.cursor]="pointerCursor" aria-label="Dificultad Física">{{texts?.barraMenu.submenuFisica}}</a></li>
+                        <li><a routerLink="/auditiva" class="a" [style.cursor]="pointerCursor" aria-label="Dificultad Auditiva">{{texts?.barraMenu.submenuAuditiva}}</a></li>
+                        <li><a routerLink="/cognitiva" class="a" [style.cursor]="pointerCursor" aria-label="Dificultad Cognitiva">{{texts?.barraMenu.submenuCognitiva}}</a></li>
+                    </ul>
+                </li>
+                <li aria-label="Menú de aplicaciones">{{texts?.barraMenu.menuAplicaciones}}
+                    <ul class="desplegable1" aria-label="Submenú de aplicaciones">
+                        <li><a routerLink="/medic" class="a" [style.cursor]="pointerCursor" aria-label="Medicación">{{texts?.barraMenu.submenuMedicacion}}</a></li>
+                        <li><a routerLink="/lista" class="a" [style.cursor]="pointerCursor" aria-label="Cita Médica">{{texts?.barraMenu.submenuCitaMedica}}</a></li>
+                        <li><a routerLink="/calcu" class="a" [style.cursor]="pointerCursor" aria-label="Calculadora">{{texts?.barraMenu.submenuCalculadora}}</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="/descargas" [style.cursor]="pointerCursor" aria-label="Descargas">{{texts?.barraMenu.menuDescargas}}</a>
+                </li>                    
+            </ul>
+        </nav>
+    </header>
+    <div class="logo">
+        <div class="contenedorLogo">
+            <div class="fotoLogo" aria-label="Foto del logo">
+                <a routerLink="/video" [style.cursor]="pointerCursor" aria-label="Enlace al video">
+                    <img src="../../../assets/logo/logo2.png" alt="logo">
+                </a>
+            </div>
+            <div id="banderas" class="banderas" [style.cursor]="pointerCursor" aria-label="Banderas de selección de idioma">
+                <div class="banderaItem" (click)="changeLanguage('es')" [ngClass]="{'active': currentLanguage === 'es'}" aria-label="Seleccionar idioma español">
+                    <img src="../../../assets/logo/es.svg" alt="españa">
+                </div>
+                <div class="banderaItem" (click)="changeLanguage('en')" [ngClass]="{'active': currentLanguage === 'en'}" aria-label="Seleccionar idioma inglés">
+                    <img src="../../../assets/logo/gb.svg" alt="inglaterra">
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="login" aria-label="Login">            
+        <ng-template [ngIf]="!estaLogueado" class="login">
+            <a routerLink="/login" [style.cursor]="pointerCursor" aria-label="Iniciar sesión">
+                <i class="fas fa-sign-in-alt"></i>
+            </a>
+            <a routerLink="/registro" [style.cursor]="pointerCursor" aria-label="Registro">
+                <i class="fas fa-user-plus"></i>
+            </a>
+        </ng-template>
+
+        <ng-template [ngIf]="estaLogueado" class="logout">
+            <a routerLink="/logout" (click)="desloguearse()" [style.cursor]="pointerCursor" aria-label="Cerrar sesión">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+            <a routerLink="/logueado" [style.cursor]="pointerCursor" class="aavatar" aria-label="Perfil de usuario">
+                <img *ngIf="perfil?.avatar" [src]="perfil?.avatar" alt="Avatar" width="50" height="50">
+            </a>
+        </ng-template>
+    </div>
+</div>

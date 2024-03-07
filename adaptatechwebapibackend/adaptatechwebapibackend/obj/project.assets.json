@@ -8274,11 +8274,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
+      "projectUniqueName": "/Users/rafaeltravadofernandez/Desktop/Curso desarrollo web/AdaptaTech/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
       "projectName": "adaptatechwebapibackend",
-      "projectPath": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
+      "projectPath": "/Users/rafaeltravadofernandez/Desktop/Curso desarrollo web/AdaptaTech/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend.csproj",
       "packagesPath": "/Users/rafaeltravadofernandez/.nuget/packages/",
-      "outputPath": "/Users/rafaeltravadofernandez/Desktop/PROYECTO FINAL/adaptatechwebapibackend/adaptatechwebapibackend/obj/",
+      "outputPath": "/Users/rafaeltravadofernandez/Desktop/Curso desarrollo web/AdaptaTech/adaptatechwebapibackend/adaptatechwebapibackend/adaptatechwebapibackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rafaeltravadofernandez/.nuget/NuGet/NuGet.Config"

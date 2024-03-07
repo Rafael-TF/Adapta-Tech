@@ -1,0 +1,39 @@
+<div class="body">
+	<div class="capaNegra">
+		<h1 [style.fontSize.px]="obtenerTamanoTexto()"> Tecnología Inclusiva visual </h1>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">En <strong>Adapta-Tech</strong>, nos esforzamos por brindar una experiencia inclusiva y accesible para todos los usuarios,
+			incluyendo a aquellos con discapacidad visual. Implementamos prácticas clave, como texto alternativo en imágenes, 
+			estructura de página clara y contraste adecuado para mejorar la legibilidad. Realizamos pruebas exhaustivas con lectores de pantalla
+			y dispositivos de asistencia, asegurando la compatibilidad total. Además, permitimos ajustes de texto y proporcionamos controles
+			intuitivos para personalizar la experiencia según las necesidades individuales de cada usuario. Nos comprometemos a ofrecer 
+			una plataforma donde la inclusión sea una prioridad para todos los visitantes, independientemente de sus capacidades visuales.</p>
+		<div class="contenedor">
+			<div class="imagenContenedor">
+				<img src="../../../assets/dificultad_visual/Lectores de Pantalla.jpeg" alt="Lectores de Pantalla">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://accesibilidadweb.dlsi.ua.es/?menu=jaws','_blank')">
+						Lectores
+					</button>
+				</div>
+			</div>
+			<div class="imagenContenedor">
+				<img src="../../../assets/dificultad_visual/Texto Ajustable.jpeg" alt="Texto Ajustable">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/lectores-de-pantalla-software-para-necesidades-especiales/', '_blank')">
+						Texto Ajustable
+					</button>
+				</div>
+			</div>
+			<div class="imagenContenedor">
+				<img src="../../../assets/dificultad_visual/Tecnologías de Asistencia visual.jpeg" alt="Tecnologías de Asistencia">
+				<div class="botonContenedor">
+					<button [style.cursor]="pointerCursor" onclick="window.open('https://www.esvision.es/mejores-aplicaciones-para-personas-con-discapacidad-visual/', '_blank');">
+						Asistencia
+					  </button>
+				</div>
+			</div>
+		</div>
+		<em class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Esta página web es accesible para personas con discapacidad <span>visual</span>, <span>física</span>, <span>auditiva </span>y <span>cognitiva</span>.</em>
+		<p class="texto" [style.fontSize.px]="obtenerTamanoTexto()">Si necesitas ayuda adicional para acceder a la información de esta página, por favor <a class="contacto" routerLink="/contacto" [style.cursor]="pointerCursor">contáctanos</a>.</p>
+	</div>
+</div>

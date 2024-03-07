@@ -1,0 +1,150 @@
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-width: 90vw;
+  min-height: auto;
+  margin-top: 30px;
+  background-color: transparent;
+}
+
+.contenedorcentrado {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  background-color: #5b87d375;  
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);  
+  padding: 30px;
+}
+.registro {
+  display: grid;
+  grid-template-areas: 
+                      "titulo titulo"
+                      "alias alias"
+                      "email emailConf"
+                      "pass passConf"
+                      "nombre apellidos"
+                      "telefono telefono"
+                      "fecha fecha"
+                      "avatar avatar"
+                      "registro registro";
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 80%;
+  min-width: 1000px;
+  padding: 30px 30px 50px 30px;
+  background-color: rgba(64, 131, 247, 0.5);
+  box-shadow: 0px 0px 20px 8px rgba(0,0,0,0.15);
+  border: 4px double black;
+  border-radius: 20px;
+}
+
+.titulo {
+  grid-area: titulo;
+  justify-self: center;
+  display: block;
+  font-size: 200%;
+  color:white;
+}
+
+.alias {
+  grid-area: alias;
+}
+
+.email {
+  grid-area: email;
+}
+
+.emailConf {
+  grid-area: emailConf;
+}
+
+.pass {
+  grid-area: pass;
+}
+
+.passConf {
+  grid-area: passConf;
+}
+
+.nombre {
+  grid-area: nombre;
+}
+
+.apellidos {
+  grid-area: apellidos;
+}
+
+.telefono {
+  grid-area: telefono;
+}
+
+.fecha {
+  grid-area: fecha;
+}
+
+.avatar {
+  grid-area: avatar;
+}
+
+ .registro label {
+  font-size: 25px;
+  align-self: flex-start;
+  margin-right: 200px;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1px -1px 5px rgb(12, 28, 211),
+        1px -1px 0 rgb(14, 47, 210),
+        1px 1px 0 rgb(7, 20, 163),
+        -1px 1px 0 rgb(115, 18, 235);
+}
+
+.registro input {
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 5px 5px 5px 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px black;
+}
+
+form input::placeholder {
+  background: transparent;
+  font-weight: bolder;
+}
+
+button {
+  grid-area: registro;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding: .5rem;
+  background-image: linear-gradient(90deg, rgba(32, 103, 154, 1) 0%, rgba(32, 103, 154, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  width: 100%;
+  border: 5px outset rgb(22, 132, 223);
+  border-radius: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 rgb(12, 28, 211),
+    1px -1px 0 rgb(14, 47, 210),
+    1px 1px 0 rgb(7, 20, 163),
+    -1px 1px 0 rgb(115, 18, 235);
+}
+
+button:hover {
+  border: 5px outset rgb(13, 81, 137);
+  border-right-color: rgb(54, 190, 240);
+  border-top-color: rgb(51, 137, 208);
+  border-left-color: rgb(33, 83, 185);
+  box-shadow: 0 1px 10px 2px black;
+}
+

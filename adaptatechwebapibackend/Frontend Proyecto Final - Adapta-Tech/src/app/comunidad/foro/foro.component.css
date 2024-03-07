@@ -1,0 +1,119 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  background-color: #5b87d375;
+  border-radius: 20px;
+  padding: 30px;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+.botonVolver {
+  margin-left: auto;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  margin-left: -15px;
+}
+
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+input {
+  margin: 0 20px 0 20px;
+  margin-left: 2.5rem;
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+
+button {  
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 2.5rem;
+  padding:.5rem;
+  background-image: linear-gradient(90deg, rgb(50, 54, 56) 0%, rgb(104, 111, 116) 35%, rgb(54, 57, 58) 100%);
+  color: white;
+  width: 15rem;
+  border: 5px outset gray;
+  border-radius: 1rem;
+  text-shadow: 2px 0px 1px;
+  text-align: center;
+}
+
+button:hover {
+  border: 5px outset rgb(12, 14, 15);
+  border-right-color: rgb(92, 111, 118);
+  border-top-color: rgb(83, 86, 89);
+  border-left-color: rgb(71, 73, 77);
+  box-shadow: 0 1px 10px 2px gray
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 60px;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+span:hover {
+  background-color: rgb(153, 153, 153);
+  padding: 30px;
+  cursor: pointer;
+}
+.tema-par {
+  background-color: #7e7d7d;
+  box-shadow: inset 0 0 2px 0 black;
+  width: 100%;
+}
+
+.tema-impar {
+  background-color: #949393;
+  box-shadow: inset 0 0 2px 0 black;
+  width: 100%;
+}
+
+.temanuevo, .temanuevo2 {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-right: 200px;
+}
+.botonTema {
+  margin-left: 0px;
+  font-size: 1rem;
+  padding:.6rem;
+  background-image: linear-gradient(90deg, rgb(50, 54, 56) 0%, rgb(104, 111, 116) 35%, rgb(54, 57, 58) 100%);
+  color: white;
+  width: 10rem;
+  border: 5px outset gray;
+  border-radius: 1rem;
+  text-shadow: 0 0 0;
+  font-weight: bold;
+}
+
+#nuevomensaje {
+  width: 1000px;
+}
